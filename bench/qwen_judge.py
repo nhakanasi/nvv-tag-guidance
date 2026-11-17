@@ -9,7 +9,7 @@ Model Studio's OpenAI-compatible endpoint (QWEN_BASE_URL; the international Dash
 audio inline as base64 `input_audio`, and Omni models only answer streamed requests; the streamed text is joined
 into one reply. The key is QWEN_API_KEY.
 
-    python bench/qwen_judge.py <audio_dir> --gt_json ... --model_name qwen3.8-omni-flash --input_mode bytes [...]
+    python -m bench.qwen_judge <audio_dir> --gt_json ... --model_name qwen3.8-omni-flash --input_mode bytes [...]
 """
 import base64
 import json
@@ -22,7 +22,7 @@ import types
 
 import requests
 
-import superbench as sb
+from bench import superbench as sb
 
 PREDICT = sb.BENCH / "evaluation" / "objective_evaluation" / "nvv_precision_recall_f1_distance" / "predict_nvc.py"
 DEFAULT_BASE_URL = "https://dashscope-intl.aliyuncs.com/compatible-mode/v1"

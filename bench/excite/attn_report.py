@@ -12,7 +12,7 @@ Items are grouped by outcome: fixed (base not hit, e2 hit), kept (hit in both), 
 random base-miss item (0.5: no relation; > 0.5: misses neglect the tag). The layer table gives, per layer, the
 base attention of hit vs miss items and that AUC, to find the layers where neglect shows.
 
-    python bench/attn_report.py --out out
+    python -m bench.attn_report --out out
 
 Writes <out>/attn/attn_report.md and prints it.
 """
@@ -23,7 +23,7 @@ from pathlib import Path
 
 import torch
 
-from outcomes import outcome
+from bench.outcomes import outcome
 
 
 def hits(root, system, delta=2):

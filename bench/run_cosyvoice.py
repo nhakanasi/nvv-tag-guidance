@@ -4,14 +4,14 @@ Writes <out>/cosyvoice_<setting>/<id>.wav, <out>/timing.jsonl and <out>/windows.
 whose read position was at the tag). Resumes a stopped run. Needs a CosyVoice checkout (COSYVOICE_REPO) and the
 CosyVoice2-0.5B model (COSYVOICE_MODEL_DIR).
 
-    python bench/run_cosyvoice.py --out out [--settings base e2] [--per_type 2]
+    python -m bench.run_cosyvoice --out out [--settings base e2] [--per_type 2]
 """
 import argparse
 import sys
 import time
 from pathlib import Path
 
-import superbench as sb
+from bench import superbench as sb
 
 ARGS = [
     (("--dilate",), {"type": int, "default": sb.CONFIG["cosyvoice"]["dilate"]}),

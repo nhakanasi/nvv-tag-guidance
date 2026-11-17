@@ -10,7 +10,7 @@ separates them, roughly:
             verifier gives only a loose location hint, so the other sound need not be at the tag)
   none      target not heard and nothing else either
 
-    python bench/outcomes.py --out out [--judge qwen3.8-omni-flash] [--run 1]
+    python -m bench.outcomes --out out [--judge qwen3.8-omni-flash] [--run 1]
 
 Writes <out>/nvv_pred/<judge>/outcomes.md and prints it.
 """

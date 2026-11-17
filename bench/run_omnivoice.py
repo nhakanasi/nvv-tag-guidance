@@ -3,14 +3,14 @@
 Writes <out>/omnivoice_<setting>/<id>.wav and one row per clip to <out>/timing.jsonl. Resumes a stopped run.
 Every setting of an item gets the same seed and reference voice.
 
-    python bench/run_omnivoice.py --out out [--settings base e2] [--per_type 2]
+    python -m bench.run_omnivoice --out out [--settings base e2] [--per_type 2]
 """
 import argparse
 import os
 import time
 from pathlib import Path
 
-import superbench as sb
+from bench import superbench as sb
 
 ARGS = [
     (("--steps",), {"type": int, "default": sb.CONFIG["omnivoice"]["steps"]}),

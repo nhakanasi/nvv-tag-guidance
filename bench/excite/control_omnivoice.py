@@ -7,22 +7,31 @@ leave the tag's attention alone:
             tag opens the sentence)  (placebo)
   e2_first  excitation b = 2 in the tag's window, but on the tokens of the sentence's first word  (placebo)
   base_s1   no guidance, seed 1 instead of 0  (how many items flip by chance)
+  e2_late   excitation b = 2 on the tag, but only in steps 8-31 instead of the first 8  (does the model commit
+            to the tag early? Attend-and-Excite stops early because late steps no longer move objects)
+  e2_all    excitation b = 2 on the tag in all 32 steps
+  e2_from24 / e2_from28   excitation b = 2 on the tag only from step 24 / 28 (OmniVoice's schedule, t_shift 0.1,
+            has committed about 3% of frames by step 8, 23% by step 24 and 41% by step 28)
 
-If a placebo fixes about as many items as e2, the gain is not from attending to the tag. Writes
+If a placebo fixes about as many items as e2, the gain is not from attending to the tag. If e2_late fixes about as
+many as e2, the first steps are not where the tag is decided. Writes
 <out>/omnivoice_<setting>/<id>.wav and timing rows, so `score.py --systems omnivoice_e2_prev ...` scores them.
 
-    python bench/control_omnivoice.py --out out [--settings e2_prev e2_first base_s1]
+    python -m bench.control_omnivoice --out out [--settings e2_prev e2_first base_s1 e2_late e2_all]
 """
 import argparse
 import re
 import time
 from pathlib import Path
 
-import run_omnivoice
-import superbench as sb
+from bench import run_omnivoice
+from bench import superbench as sb
 
-# name -> (setting, placebo word, seed)
-CONTROLS = {"e2_prev": ((0, 0, 2), "prev", 0), "e2_first": ((0, 0, 2), "first", 0), "base_s1": ((0, 0, 0), None, 1)}
+# name -> (setting, placebo word, seed, excitation steps [start, end); None: the first K)
+CONTROLS = {"e2_prev": ((0, 0, 2), "prev", 0, None), "e2_first": ((0, 0, 2), "first", 0, None),
+            "base_s1": ((0, 0, 0), None, 1, None), "e2_late": ((0, 0, 2), None, 0, (8, 32)),
+            "e2_all": ((0, 0, 2), None, 0, (0, 32)), "e2_from24": ((0, 0, 2), None, 0, (24, 32)),
+            "e2_from28": ((0, 0, 2), None, 0, (28, 32))}
 WORD = re.compile(r"\w[\w']*")
 
 
@@ -67,7 +76,7 @@ def main():
     guide.tag_token_positions = placebo_positions
     done = sb.done_rows(args.out)
     for name in args.settings:
-        setting, placebo, seed = CONTROLS[name]
+        setting, placebo, seed, guide.excite_steps = CONTROLS[name]
         system = f"omnivoice_{name}"
         (args.out / system).mkdir(parents=True, exist_ok=True)
         guide.setting, state["placebo"] = setting, placebo

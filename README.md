@@ -21,25 +21,31 @@ the model family:
 
 ## Layout
 
+The two methods are separate modules and have separate evidence; the model adapters apply both.
+
 ```
-src/tagguide/          the method, importable from each model's environment
+src/tagguide/
+  contrast.py          guidance: presence and type contrasts on log-probabilities
+  excite.py            attention excitation: the additive bias on the scores to the tag's tokens
+  omnivoice.py         Guide: OmniVoice's decoding loop with both methods; patch_tokenization()
+  cosyvoice.py         Reader (read position, excitation hook), guided_inference for the CosyVoice 2 LM
   tags.py              tag finding, removal and confuser swap
-  omnivoice.py         Guide: replaces OmniVoice's decoding loop; patch_tokenization()
-  cosyvoice.py         Reader (attention read position and excitation), guided_inference for the CosyVoice 2 LM
-configs/superbench.yaml  guidance settings, per-model window/steps, tag maps and confusers, judge
-bench/                 NVV-SuperBench experiments
+configs/superbench.yaml  settings, per-model window/steps, tag maps and confusers, judge
+bench/                 NVV-SuperBench, shared by both methods
   superbench.py        benchmark items, reference voices, config and .env loading
   run_omnivoice.py     synthesis in every setting
   run_cosyvoice.py
   score.py             the benchmark's verifier and metrics (with qwen_judge.py)
   qwen_judge.py        Qwen-Omni judge standing in for Gemini behind the benchmark's unchanged prompt
   outcomes.py          hit / off / other / none split of each judged item
-  attn_omnivoice.py    attention traces of excitation (natural vs excited mass on the tag)
-  attn_cosyvoice.py
-  attn_report.py       traces joined with outcomes
-  control_omnivoice.py placebo excitation on another word, and a reseed of the base model
+  stats.py             fixed / broken counts, sign test, RTF
+  guidance/            README.md: motivation and evidence for the contrasts; evidence.py recomputes it
+  excite/              README.md: motivation and evidence for excitation; evidence.py recomputes it
+    attn_omnivoice.py, attn_cosyvoice.py, attn_report.py   attention traces (natural vs excited share on the tag)
+    control_omnivoice.py   placebo (bias on another word), reseed, excitation in later steps
+    read_position_check.py which CosyVoice 2 layers track the text
 refs/                  the two fixed reference voices every item is cloned from
-results/               judged predictions, metrics and tables of the runs below (no audio)
+results/               judged predictions, metrics, timing and attention traces of the reported runs (no audio)
 ```
 
 ## Setup
@@ -62,16 +68,17 @@ cp .env.example .env                     # paths, judge key
 
 ## Running the benchmark
 
-```bash
-python bench/run_omnivoice.py --out out           # 150 items x 5 settings; resumes; --per_type N for a subset
-python bench/run_cosyvoice.py --out out           # 400 items x 5 settings
-python bench/score.py --out out                   # judge + metrics -> out/nvv_pred/<judge>/nvv_report.md
-python bench/outcomes.py --out out                # -> out/nvv_pred/<judge>/outcomes.md
+Run from the repository root (`python -m`, so `bench` is importable).
 
-# analysis of excitation
-python bench/control_omnivoice.py --out out && python bench/score.py --out out
-python bench/attn_omnivoice.py --out out; python bench/attn_cosyvoice.py --out out
-python bench/attn_report.py --out out             # -> out/attn/attn_report.md
+```bash
+python -m bench.run_omnivoice --out out           # 150 items x 5 settings; resumes; --per_type N for a subset
+python -m bench.run_cosyvoice --out out           # 400 items x 5 settings
+python -m bench.score --out out                   # judge + metrics -> out/nvv_pred/<judge>/nvv_report.md
+python -m bench.outcomes --out out                # -> out/nvv_pred/<judge>/outcomes.md
+
+# evidence for each method, from judged predictions (and traces); works on results/ without a GPU or judge calls
+python -m bench.guidance.evidence --out results   # see bench/guidance/README.md
+python -m bench.excite.evidence --out results     # see bench/excite/README.md
 ```
 
 Settings (`configs/superbench.yaml`): `base` (none), `p2` (l1 = 2), `t3` (l2 = 3), `e2` (b = 2), `p2t3e2` (all).

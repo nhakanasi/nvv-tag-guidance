@@ -10,7 +10,7 @@ prompt, text and speech so far) on the tag's text tokens:
 It also records the read position after every step, so the steps at the tag are known in every setting, including
 b = 0. Single-stream settings only (base, e2). The re-synthesized audio is compared with the clip in --out.
 
-    python bench/attn_cosyvoice.py --out out [--ids en_101 ...]
+    python -m bench.attn_cosyvoice --out out [--ids en_101 ...]
 
 Writes <out>/attn/cosyvoice_<setting>.pt (dict id -> arrays).
 """
@@ -19,8 +19,8 @@ from pathlib import Path
 
 import torch
 
-import run_cosyvoice
-import superbench as sb
+from bench import run_cosyvoice
+from bench import superbench as sb
 
 
 def trace_reader():

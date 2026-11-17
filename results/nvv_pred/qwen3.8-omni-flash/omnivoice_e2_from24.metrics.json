@@ -1,0 +1,36 @@
+{
+  "gt_json": "third_party\\NVV-SuperBench\\dataset\\nvbench_data_en.json",
+  "audio_dir": "",
+  "reference_size_R": 2250,
+  "runs": [
+    {
+      "reference_size_R": 2250,
+      "predicted_size_P": 150,
+      "paired_size_I": 150,
+      "coverage": 0.06666666666666667,
+      "tp": 139,
+      "fp": 9,
+      "fn": 11,
+      "precision_paired": 0.9391891891891891,
+      "recall_paired": 0.9266666666666666,
+      "f1_paired": 0.9328859060402684,
+      "ca_f1": 0.1244404655326768,
+      "alpha": 0.5,
+      "delta": 2,
+      "pos_unit": "word",
+      "count_hallu_as_fp": true,
+      "tpd": 0.06474820143884892,
+      "tpd_mean": 0.06474820143884892,
+      "tpd_std": 0.3232227457720494,
+      "tpd_var": 0.1044729433844229,
+      "tpd_n": 139,
+      "ntd": 0.0022116838518244247,
+      "ntd_mean": 0.0022116838518244247,
+      "ntd_std": 0.010950344912968587,
+      "ntd_var": 0.00011991005371297701,
+      "ntd_n": 139,
+      "u_match": 139,
+      "pred_json": "out\\nvv_pred\\qwen3.8-omni-flash\\run1\\omnivoice_e2_from24\\omnivoice_e2_from24.json"
+    }
+  ]
+}

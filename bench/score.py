@@ -11,7 +11,7 @@ Numbers are comparable only under one judge. Predictions go to <out>/nvv_pred/<j
 <out>/nvv_pred/<judge>/<system>.metrics.json and a table to <out>/nvv_pred/<judge>/nvv_report.md. Re-running
 resumes: the predictor skips clips it already judged, so a rerun on judged clips makes no API calls.
 
-    python bench/score.py --out out [--systems omnivoice_base omnivoice_e2] [--runs 3]
+    python -m bench.score --out out [--systems omnivoice_base omnivoice_e2] [--runs 3]
 """
 import argparse
 import json
@@ -20,9 +20,8 @@ import subprocess
 import sys
 from pathlib import Path
 
-import superbench as sb
+from bench import superbench as sb
 
-HERE = Path(__file__).resolve().parent
 NVV = sb.BENCH / "evaluation" / "objective_evaluation" / "nvv_precision_recall_f1_distance"
 GT_EN = sb.BENCH / "dataset" / "nvbench_data_en.json"
 KEYS = [("coverage", "Coverage"), ("precision_paired", "Precision"), ("recall_paired", "Recall"),
@@ -44,7 +43,7 @@ def main():
     if not os.environ.get(key):
         sys.exit(f"{key} not set (environment or .env)")
     env = dict(os.environ, PYTHONIOENCODING="utf-8")
-    predictor = HERE / "qwen_judge.py" if qwen else NVV / "predict_nvc.py"
+    predictor = ["-m", "bench.qwen_judge"] if qwen else [str(NVV / "predict_nvc.py")]
     systems = args.systems or sorted(p.name for p in args.out.iterdir() if p.is_dir() and any(p.glob("*.wav")))
     pred_root = args.out / "nvv_pred" / args.model.split("/")[-1]  # one folder per judge model
     rows = []
@@ -54,10 +53,10 @@ def main():
         for k in range(1, args.runs + 1):
             out_dir = pred_root / f"run{k}" / system
             out_dir.mkdir(parents=True, exist_ok=True)
-            subprocess.run([sys.executable, str(predictor), str(audio), "--gt_json", str(GT_EN),
+            subprocess.run([sys.executable, *predictor, str(audio), "--gt_json", str(GT_EN),
                             "--output_dir", str(out_dir), "--system_name", system, "--model_name", args.model,
                             "--pos_unit", "word", "--max_workers", str(args.workers), "--upload_concurrency", "4",
-                            "--input_mode", "bytes", "--fail_fast", "0"], env=env, check=True)
+                            "--input_mode", "bytes", "--fail_fast", "0"], env=env, check=True, cwd=sb.ROOT)
             preds += [str(p) for p in out_dir.glob("*.json") if not p.name.endswith((".raw.json", ".skipped.json"))]
         save = pred_root / f"{system}.metrics.json"
         # No --audio_dir: the reference set is the whole benchmark, so Coverage is its instance coverage.

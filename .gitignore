@@ -12,3 +12,6 @@ __pycache__/
 *.pyc
 *.egg-info/
 .venv*/
+
+# Attention traces behind bench/excite/README.md are kept
+!results/attn/*.pt

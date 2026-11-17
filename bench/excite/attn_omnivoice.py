@@ -11,15 +11,15 @@ Per item it saves, as [step, layer] arrays, the mean over the tag window's frame
 frames (out_*), the per-frame natural mass (mean over layers), the window and the step count K excitation acts in.
 The re-synthesized audio is compared with the clip in --out (same_audio) to confirm the trace is of the judged clip.
 
-    python bench/attn_omnivoice.py --out out [--settings base e2] [--ids en_1 en_2 ...]
+    python -m bench.attn_omnivoice --out out [--settings base e2] [--ids en_1 en_2 ...]
 
 Writes <out>/attn/omnivoice_<setting>.pt (dict id -> arrays).
 """
 import argparse
 from pathlib import Path
 
-import run_omnivoice
-import superbench as sb
+from bench import run_omnivoice
+from bench import superbench as sb
 
 
 class Recorder:

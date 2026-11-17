@@ -1,15 +1,14 @@
-"""Tag-local guidance for OmniVoice (masked diffusion over audio tokens, fixed length).
+"""OmniVoice (masked diffusion over audio tokens, fixed length) with the two tag-local methods.
 
 Each decoding step scores the masked frames with the conditional pass (voice prompt + text) and the unconditional
 one (the target frames alone) and samples from  c + g (c - u),  OmniVoice's own CFG. `Guide` adds, on a window of
 frames around each tag and in the first K steps only:
 
-    + l1 * m * (c - c_notag)       presence contrast: the same text with its tags removed
-    + l2 * m * (c - c_confuser)    type contrast: each tag replaced by its confuser
-    + b on the attention scores from the window's frames to the tag's text tokens (excitation; every layer and head
-      of the conditional pass)
+    guidance (contrast.py)    + l1 * m * (c - c_notag) + l2 * m * (c - c_confuser)
+    excitation (excite.py)    + b on the attention scores from the window's frames to the tag's text tokens, in every
+                              layer and head of the conditional pass
 
-All terms are in log-probabilities. m is 1 on the frames from the start of the word before the tag to the end of
+The contrasts are in log-probabilities. m is 1 on the frames from the start of the word before the tag to the end of
 the word after it, dilated by `dilate_s` seconds, placed with OmniVoice's own duration estimate of the text up to
 each point, scaled to the target length. The first K steps run one pass per stream (cond, notag, confuser, empty);
 later steps run cond and empty only.
@@ -26,6 +25,7 @@ import torch
 import torch.nn.functional as F
 from omnivoice.models import omnivoice as ov
 
+from . import contrast, excite
 from .tags import word_span
 
 
@@ -44,6 +44,9 @@ class Guide:
     def __init__(self, model, tags, steps=8, dilate_s=0.3):
         self.model, self.tags, self.steps, self.dilate_s = model, tags, steps, dilate_s
         self.setting = None  # (l1 presence, l2 type, b excitation)
+        # Steps [start, end) the excitation acts in; None: the same first K steps as the contrasts. Other ranges
+        # are for analysis (bench/control_omnivoice.py), e.g. only the late steps.
+        self.excite_steps = None
         self.orig = model._generate_iterative
         model._generate_iterative = self
 
@@ -92,13 +95,10 @@ class Guide:
         return groups if grouped else [i for g in groups for i in g]
 
     def run(self, task, gen_config):
-        m, (l1, l2, bias) = self.model, self.setting
+        m, bias = self.model, self.setting[2]
         text, t_len = task.texts[0], task.target_lens[0]
-        conds = [self.inputs(task, text, gen_config)]
-        if l1:
-            conds.append(self.inputs(task, self.tags.remove(text), gen_config))
-        if l2:
-            conds.append(self.inputs(task, self.tags.swap(text), gen_config))
+        conds = [self.inputs(task, t, gen_config)
+                 for t in contrast.texts(self.setting, text, self.tags.remove(text), self.tags.swap(text))]
         win = self.window(task, text)
 
         # One batch: the cond streams, then the unconditional row (target frames only), padded to one length.
@@ -120,11 +120,10 @@ class Guide:
             allow[i, :, pad, pad] = True
 
         keys = torch.tensor(self.tag_token_positions(task, text, c_lens[0]), device=m.device)
-        excite = None
-        if bias:  # additive mask: +b from the window's frames to the tag's tokens, cond row only
-            excite = torch.zeros((n, 1, L, L), dtype=dtype, device=m.device).masked_fill(~allow, torch.finfo(dtype).min)
-            q = c_lens[0] - t_len + torch.nonzero(win).squeeze(-1)
-            excite[0, 0, q.unsqueeze(-1), keys.unsqueeze(0)] += bias
+        excited = None
+        if bias:  # +b from the window's frames to the tag's tokens, conditional row only
+            excited = excite.additive_mask(allow, 0, c_lens[0] - t_len + torch.nonzero(win).squeeze(-1), keys, bias,
+                                           dtype)
         late, late_L = [0, n - 1], max(c_lens[0], t_len)
 
         # OmniVoice's own unmasking schedule.
@@ -138,15 +137,16 @@ class Guide:
         layer_ids = torch.arange(C, device=m.device).view(1, -1, 1)
         w = win.view(1, 1, -1, 1).float()
 
+        e_lo, e_hi = self.excite_steps or (0, self.steps)
         for s in range(gen_config.num_step):
             early = s < self.steps
+            mask = excited if excited is not None and e_lo <= s < e_hi else allow
             if early:
-                logits = m(input_ids=ids, audio_mask=amask,
-                           attention_mask=excite if excite is not None else allow).logits.float()
+                logits = m(input_ids=ids, audio_mask=amask, attention_mask=mask).logits.float()
                 n_rows = n
             else:
                 logits = m(input_ids=ids[late, :, :late_L], audio_mask=amask[late, :late_L],
-                           attention_mask=allow[late][:, :, :late_L, :late_L]).logits.float()
+                           attention_mask=mask[late][:, :, :late_L, :late_L]).logits.float()
                 n_rows = 2
             if sched[s] <= 0:
                 continue
@@ -158,12 +158,7 @@ class Guide:
             u = F.log_softmax(logits[n_rows - 1:n_rows, :, :t_len, :], dim=-1)
             lp = c + gen_config.guidance_scale * (c - u)
             if early:
-                j = 1
-                if l1:
-                    lp = lp + l1 * w * (c - stream(j))
-                    j += 1
-                if l2:
-                    lp = lp + l2 * w * (c - stream(j))
+                lp = contrast.apply(lp, c, [stream(j) for j in range(1, len(conds))], self.setting, w)
             lp = torch.log_softmax(lp, dim=-1)
             lp[..., m.config.audio_mask_id] = -float("inf")
             pred = lp.argmax(dim=-1)

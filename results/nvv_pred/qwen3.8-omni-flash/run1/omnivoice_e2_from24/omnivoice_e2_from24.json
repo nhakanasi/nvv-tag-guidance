@@ -1,0 +1,2995 @@
+{
+  "out\\omnivoice_e2_from24\\en_12.wav": {
+    "id": "en_12",
+    "text": "I see! So the solution is where the two lines intersect on the graph. It makes so much more sense now.",
+    "text_with_mark": "<ah> I see! So the solution is where the two lines intersect on the graph. It makes so much more sense now.",
+    "target_tag": "<ah>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 21,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 21,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_10.wav": {
+    "id": "en_10",
+    "text": "I was just looking at that spreadsheet... of course. The formula in cell G12 is referencing the wrong tab.",
+    "text_with_mark": "I was just looking at that spreadsheet... <ah> of course. The formula in cell G12 is referencing the wrong tab.",
+    "target_tag": "<ah>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 7,
+      "n_units": 19,
+      "norm": 0.3684210526315789
+    },
+    "gt_pos": {
+      "index": 7,
+      "n_units": 19,
+      "norm": 0.3684210526315789
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_14.wav": {
+    "id": "en_14",
+    "text": "I've been looking for this specific reference all morning. It wasn't in the index, it's not in the appendix... wait. It's in the preface. Of course.",
+    "text_with_mark": "I've been looking for this specific reference all morning. It wasn't in the index, it's not in the appendix... wait. <ah> It's in the preface. Of course.",
+    "target_tag": "<ah>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 20,
+      "n_units": 26,
+      "norm": 0.7692307692307693
+    },
+    "gt_pos": {
+      "index": 20,
+      "n_units": 26,
+      "norm": 0.7692307692307693
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1.wav": {
+    "id": "en_1",
+    "text": "Wait, if I connect the red wire to this terminal instead of that one... I see. So that's what I was missing.",
+    "text_with_mark": "Wait, if I connect the red wire to this terminal instead of that one... <ah> I see. So that's what I was missing.",
+    "target_tag": "<ah>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 14,
+      "n_units": 22,
+      "norm": 0.6363636363636364
+    },
+    "gt_pos": {
+      "index": 14,
+      "n_units": 22,
+      "norm": 0.6363636363636364
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1402.wav": {
+    "id": "en_1402",
+    "text": "I don't know what came over me! It was pure desperation. And the lock just clicked open! I can't believe that actually worked.",
+    "text_with_mark": "I don't know what came over me! It was pure desperation. <laugh> And the lock just clicked open! I can't believe that actually worked.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 11,
+      "n_units": 23,
+      "norm": 0.4782608695652174
+    },
+    "gt_pos": {
+      "index": 11,
+      "n_units": 23,
+      "norm": 0.4782608695652174
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_11.wav": {
+    "id": "en_11",
+    "text": "So you're saying the key isn't in any of the drawers... it's under the mat. Of course, the oldest trick in the book.",
+    "text_with_mark": "So you're saying the key isn't in any of the drawers...<ah> it's under the mat. Of course, the oldest trick in the book.",
+    "target_tag": "<ah>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 11,
+      "n_units": 23,
+      "norm": 0.4782608695652174
+    },
+    "gt_pos": {
+      "index": 11,
+      "n_units": 23,
+      "norm": 0.4782608695652174
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1406.wav": {
+    "id": "en_1406",
+    "text": "Are you serious? You wore two different shoes to the meeting and didn't notice until now? Oh, that is priceless.",
+    "text_with_mark": "Are you serious? You wore two different shoes to the meeting and didn't notice until now? <laugh> Oh, that is priceless.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 16,
+      "n_units": 20,
+      "norm": 0.8
+    },
+    "gt_pos": {
+      "index": 16,
+      "n_units": 20,
+      "norm": 0.8
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1403.wav": {
+    "id": "en_1403",
+    "text": "Okay, so the recipe said 'fold gently'. I have no idea what that means, so I just... I basically punched the dough. It came out of the oven looking like a sad, brown rock.",
+    "text_with_mark": "Okay, so the recipe said 'fold gently'. I have no idea what that means, so I just... <laugh> I basically punched the dough. It came out of the oven looking like a sad, brown rock.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 17,
+      "n_units": 34,
+      "norm": 0.5
+    },
+    "gt_pos": {
+      "index": 17,
+      "n_units": 34,
+      "norm": 0.5
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1404.wav": {
+    "id": "en_1404",
+    "text": "I thought for sure we were going to crash. I mean, my whole life flashed before my eyes, and all I could think about was that I'd left the oven on. The oven! Can you believe that?",
+    "text_with_mark": "I thought for sure we were going to crash. I mean, my whole life flashed before my eyes, and all I could think about was that I'd left the oven on. <laugh> The oven! Can you believe that?",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 31,
+      "n_units": 37,
+      "norm": 0.8378378378378378
+    },
+    "gt_pos": {
+      "index": 31,
+      "n_units": 37,
+      "norm": 0.8378378378378378
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1407.wav": {
+    "id": "en_1407",
+    "text": "Oh my god, I totally forgot about this one! You seriously thought that haircut was a good idea? You looked like a startled porcupine!",
+    "text_with_mark": "Oh my god, I totally forgot about this one! You seriously thought that haircut was a good idea? You looked like a startled porcupine! <laugh>",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 24,
+      "n_units": 24,
+      "norm": 1.0
+    },
+    "gt_pos": {
+      "index": 24,
+      "n_units": 24,
+      "norm": 1.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1408.wav": {
+    "id": "en_1408",
+    "text": "I got you! I can't believe that actually worked! Did you see that move?",
+    "text_with_mark": "I got you! <laugh> I can't believe that actually worked! Did you see that move?",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 3,
+      "n_units": 14,
+      "norm": 0.21428571428571427
+    },
+    "gt_pos": {
+      "index": 3,
+      "n_units": 14,
+      "norm": 0.21428571428571427
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1410.wav": {
+    "id": "en_1410",
+    "text": "Are you seriously suggesting we use a giant inflatable duck as the getaway vehicle? That's the most ridiculous, idiotic, brilliant plan I've ever heard.",
+    "text_with_mark": "Are you seriously suggesting we use a giant inflatable duck as the getaway vehicle? <laugh> That's the most ridiculous, idiotic, brilliant plan I've ever heard.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 14,
+      "n_units": 24,
+      "norm": 0.5833333333333334
+    },
+    "gt_pos": {
+      "index": 14,
+      "n_units": 24,
+      "norm": 0.5833333333333334
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1411.wav": {
+    "id": "en_1411",
+    "text": "Wait, let me get this straight. You hid the remote control from yourself so you'd be forced to get up and exercise? That is... peak procrastination.",
+    "text_with_mark": "Wait, let me get this straight. You hid the remote control from yourself so you'd be forced to get up and exercise? <laugh> That is... peak procrastination.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 22,
+      "n_units": 26,
+      "norm": 0.8461538461538461
+    },
+    "gt_pos": {
+      "index": 22,
+      "n_units": 26,
+      "norm": 0.8461538461538461
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1409.wav": {
+    "id": "en_1409",
+    "text": "Oh, you remember that old rust bucket I used to drive? I thought I was so cool in that thing. It would backfire every time I tried to go up a hill.",
+    "text_with_mark": "Oh, you remember that old rust bucket I used to drive? <laugh> I thought I was so cool in that thing. It would backfire every time I tried to go up a hill.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 11,
+      "n_units": 32,
+      "norm": 0.34375
+    },
+    "gt_pos": {
+      "index": 11,
+      "n_units": 32,
+      "norm": 0.34375
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1401.wav": {
+    "id": "en_1401",
+    "text": "You seriously spent three hours trying to assemble that bookshelf, only to realize you'd put the main shelf on upside down? Oh, honey. I can't.",
+    "text_with_mark": "You seriously spent three hours trying to assemble that bookshelf, only to realize you'd put the main shelf on upside down? <laugh> Oh, honey. I can't.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 21,
+      "n_units": 25,
+      "norm": 0.84
+    },
+    "gt_pos": {
+      "index": 21,
+      "n_units": 25,
+      "norm": 0.84
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_13.wav": {
+    "id": "en_13",
+    "text": "So the data isn't missing, it was just filtered out by the new query parameters? That makes sense. I didn't realize the default settings had changed.",
+    "text_with_mark": "So the data isn't missing, it was just filtered out by the new query parameters?<ah> That makes sense. I didn't realize the default settings had changed.",
+    "target_tag": "<ah>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 15,
+      "n_units": 26,
+      "norm": 0.5769230769230769
+    },
+    "gt_pos": {
+      "index": 15,
+      "n_units": 26,
+      "norm": 0.5769230769230769
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1413.wav": {
+    "id": "en_1413",
+    "text": "I tried to do that cool thing where you lean back in your chair, you know? Well, the chair kept going. I ended up flat on my back, legs in the air, right in the middle of the restaurant. He was so nice about it, but oh my god, the mortification.",
+    "text_with_mark": "I tried to do that cool thing where you lean back in your chair, you know? Well, the chair kept going. I ended up flat on my back, legs in the air, right in the middle of the restaurant. <laugh> He was so nice about it, but oh my god, the mortification.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 39,
+      "n_units": 51,
+      "norm": 0.7647058823529411
+    },
+    "gt_pos": {
+      "index": 39,
+      "n_units": 51,
+      "norm": 0.7647058823529411
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1416.wav": {
+    "id": "en_1416",
+    "text": "I'm sorry, I'm trying to be serious, but I just pictured him trying to explain that to his boss. The look on his face!",
+    "text_with_mark": "I'm sorry, I'm trying to be serious, but I just pictured him trying to explain that to his boss. <laugh> The look on his face!",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 19,
+      "n_units": 24,
+      "norm": 0.7916666666666666
+    },
+    "gt_pos": {
+      "index": 19,
+      "n_units": 24,
+      "norm": 0.7916666666666666
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1412.wav": {
+    "id": "en_1412",
+    "text": "You should have seen the look on his face when the cat just walked right across his keyboard and sent the email. I'm sorry, I just can't. It was perfect.",
+    "text_with_mark": "You should have seen the look on his face when the cat just walked right across his keyboard and sent the email. <laugh> I'm sorry, I just can't. It was perfect.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 22,
+      "n_units": 30,
+      "norm": 0.7333333333333333
+    },
+    "gt_pos": {
+      "index": 22,
+      "n_units": 30,
+      "norm": 0.7333333333333333
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1421.wav": {
+    "id": "en_1421",
+    "text": "He tried to do a magic trick for the kids, you know, the one where you pull a coin from behind their ear? But he got so nervous he dropped it, and it went right down the back of my shirt. I spent the rest of the party trying to fish a quarter out of my bra without anyone noticing.",
+    "text_with_mark": "He tried to do a magic trick for the kids, you know, the one where you pull a coin from behind their ear? But he got so nervous he dropped it, and it went right down the back of my shirt. <laugh> I spent the rest of the party trying to fish a quarter out of my bra without anyone noticing.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 41,
+      "n_units": 60,
+      "norm": 0.6833333333333333
+    },
+    "gt_pos": {
+      "index": 41,
+      "n_units": 60,
+      "norm": 0.6833333333333333
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1405.wav": {
+    "id": "en_1405",
+    "text": "So I ask him, 'What's the big emergency?' and he just holds up this single, burnt piece of toast. I completely lost it.",
+    "text_with_mark": "So I ask him, 'What's the big emergency?' and he just holds up this single, burnt piece of toast.<laugh> I completely lost it.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 19,
+      "n_units": 23,
+      "norm": 0.8260869565217391
+    },
+    "gt_pos": {
+      "index": 19,
+      "n_units": 23,
+      "norm": 0.8260869565217391
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1423.wav": {
+    "id": "en_1423",
+    "text": "You seriously thought a squirrel was conducting the traffic? Oh, you have to be kidding me. I can't even... that's too much.",
+    "text_with_mark": "You seriously thought a squirrel was conducting the traffic? <laugh> Oh, you have to be kidding me. I can't even... that's too much.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 9,
+      "n_units": 22,
+      "norm": 0.4090909090909091
+    },
+    "gt_pos": {
+      "index": 9,
+      "n_units": 22,
+      "norm": 0.4090909090909091
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1418.wav": {
+    "id": "en_1418",
+    "text": "He just froze, puffed up to twice his normal size, and then started... stalking it. Like it was some kind of bizarre, noisy prey. It was the bravest, most ridiculous thing I've ever seen.",
+    "text_with_mark": "He just froze, puffed up to twice his normal size, and then started...<laugh> stalking it. Like it was some kind of bizarre, noisy prey. It was the bravest, most ridiculous thing I've ever seen.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 13,
+      "n_units": 34,
+      "norm": 0.38235294117647056
+    },
+    "gt_pos": {
+      "index": 15,
+      "n_units": 34,
+      "norm": 0.4411764705882353
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1425.wav": {
+    "id": "en_1425",
+    "text": "So there's Mark, Mr. 'I-Read-The-Instructions,' surrounded by a mountain of plastic parts, and the only thing he's managed to build is a single wheel. He looked up at me with this completely deadpan expression and just said, 'It's a unicycle.' I absolutely lost it.",
+    "text_with_mark": "So there's Mark, Mr. 'I-Read-The-Instructions,' surrounded by a mountain of plastic parts, and the only thing he's managed to build is a single wheel. He looked up at me with this completely deadpan expression and just said, 'It's a unicycle.' <laugh> I absolutely lost it.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 43,
+      "n_units": 47,
+      "norm": 0.9148936170212766
+    },
+    "gt_pos": {
+      "index": 43,
+      "n_units": 47,
+      "norm": 0.9148936170212766
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1417.wav": {
+    "id": "en_1417",
+    "text": "And then, do you remember? You took a huge bite and your face just... completely crumpled.",
+    "text_with_mark": "And then, do you remember? You took a huge bite and your face just... <laugh> completely crumpled.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 14,
+      "n_units": 16,
+      "norm": 0.875
+    },
+    "gt_pos": {
+      "index": 5,
+      "n_units": 16,
+      "norm": 0.3125
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1414.wav": {
+    "id": "en_1414",
+    "text": "And then the puppy, with all the confidence in the world, just charges straight at the glass door. He didn't even slow down. The little thud was the funniest thing I've ever heard.",
+    "text_with_mark": "And then the puppy, with all the confidence in the world, just charges straight at the glass door. <laugh> He didn't even slow down. The little thud was the funniest thing I've ever heard.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 18,
+      "n_units": 33,
+      "norm": 0.5454545454545454
+    },
+    "gt_pos": {
+      "index": 18,
+      "n_units": 33,
+      "norm": 0.5454545454545454
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1424.wav": {
+    "id": "en_1424",
+    "text": "Oh, I remember that! You tried to do a cartwheel to impress Sarah, and your pants just... completely split down the middle! In front of everyone.",
+    "text_with_mark": "Oh, I remember that! <laugh> You tried to do a cartwheel to impress Sarah, and your pants just... completely split down the middle! In front of everyone.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 4,
+      "n_units": 26,
+      "norm": 0.15384615384615385
+    },
+    "gt_pos": {
+      "index": 4,
+      "n_units": 26,
+      "norm": 0.15384615384615385
+    },
+    "hallucinated": true,
+    "hallucinated_events": [
+      {
+        "tag": "<chuckle>",
+        "location_hint": "pants just... completely split"
+      }
+    ]
+  },
+  "out\\omnivoice_e2_from24\\en_1428.wav": {
+    "id": "en_1428",
+    "text": "You seriously suggested we build a tiny catapult to launch the pizza rolls into our mouths from across the room? You're going to take someone's eye out. Or, more likely, just get grease all over the ceiling.",
+    "text_with_mark": "You seriously suggested we build a tiny catapult to launch the pizza rolls into our mouths from across the room? <laugh> You're going to take someone's eye out. Or, more likely, just get grease all over the ceiling.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 20,
+      "n_units": 37,
+      "norm": 0.5405405405405406
+    },
+    "gt_pos": {
+      "index": 20,
+      "n_units": 37,
+      "norm": 0.5405405405405406
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1415.wav": {
+    "id": "en_1415",
+    "text": "You should have seen his face when the 'shelf' just... disintegrated. He just stood there, covered in sawdust and holding a single screw. I couldn't breathe!",
+    "text_with_mark": "You should have seen his face when the 'shelf' just... disintegrated. <laugh> He just stood there, covered in sawdust and holding a single screw. I couldn't breathe!",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 11,
+      "n_units": 26,
+      "norm": 0.4230769230769231
+    },
+    "gt_pos": {
+      "index": 11,
+      "n_units": 26,
+      "norm": 0.4230769230769231
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1429.wav": {
+    "id": "en_1429",
+    "text": "And I'm not even kidding, for one glorious second, I thought I was Tony Hawk. The next thing I know, my feet are in the air and I'm sitting in a pile of dirt and purple flowers. I think I scared her cat.",
+    "text_with_mark": "And I'm not even kidding, for one glorious second, I thought I was Tony Hawk. The next thing I know, my feet are in the air and I'm sitting in a pile of dirt and purple flowers. <laugh> I think I scared her cat.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 37,
+      "n_units": 43,
+      "norm": 0.8604651162790697
+    },
+    "gt_pos": {
+      "index": 37,
+      "n_units": 43,
+      "norm": 0.8604651162790697
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1432.wav": {
+    "id": "en_1432",
+    "text": "I bought the cat this fancy, expensive new bed, right? He completely ignored it for a week. Then last night, I find him sound asleep in the cardboard box it came in. The bed was right next to it.",
+    "text_with_mark": "I bought the cat this fancy, expensive new bed, right? He completely ignored it for a week. Then last night, I find him sound asleep in the cardboard box it came in. <laugh> The bed was right next to it.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 32,
+      "n_units": 39,
+      "norm": 0.8205128205128205
+    },
+    "gt_pos": {
+      "index": 32,
+      "n_units": 39,
+      "norm": 0.8205128205128205
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1420.wav": {
+    "id": "en_1420",
+    "text": "Okay, so get this. He tells me, with a completely straight face, that the reason he was late was because he was teaching a squirrel how to parallel park. He said the squirrel was a 'fast learner'.",
+    "text_with_mark": "Okay, so get this. He tells me, with a completely straight face, that the reason he was late was because he was teaching a squirrel how to parallel park.<laugh> He said the squirrel was a 'fast learner'.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 29,
+      "n_units": 37,
+      "norm": 0.7837837837837838
+    },
+    "gt_pos": {
+      "index": 29,
+      "n_units": 37,
+      "norm": 0.7837837837837838
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1419.wav": {
+    "id": "en_1419",
+    "text": "So I climb up on the shed roof, right? And I've got this huge black trash bag. I was completely convinced it was a parachute. I took one giant leap and... well, let's just say the landing was less 'graceful eagle' and more 'sack of potatoes'.",
+    "text_with_mark": "So I climb up on the shed roof, right? And I've got this huge black trash bag. I was completely convinced it was a parachute. I took one giant leap and... <laugh> well, let's just say the landing was less 'graceful eagle' and more 'sack of potatoes'.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 31,
+      "n_units": 46,
+      "norm": 0.6739130434782609
+    },
+    "gt_pos": {
+      "index": 17,
+      "n_units": 46,
+      "norm": 0.3695652173913043
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1433.wav": {
+    "id": "en_1433",
+    "text": "You actually wore that? Oh, I remember that phase. You thought that neon green windbreaker made you invisible to teachers. It did not.",
+    "text_with_mark": "You actually wore that? <laugh> Oh, I remember that phase. You thought that neon green windbreaker made you invisible to teachers. It did not.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 4,
+      "n_units": 23,
+      "norm": 0.17391304347826086
+    },
+    "gt_pos": {
+      "index": 4,
+      "n_units": 23,
+      "norm": 0.17391304347826086
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1435.wav": {
+    "id": "en_1435",
+    "text": "And then he said, with a completely straight face, 'I think my toaster is spying on me.' I just lost it.",
+    "text_with_mark": "And then he said, with a completely straight face, 'I think my toaster is spying on me.' <laugh> I just lost it.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 17,
+      "n_units": 21,
+      "norm": 0.8095238095238095
+    },
+    "gt_pos": {
+      "index": 17,
+      "n_units": 21,
+      "norm": 0.8095238095238095
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1427.wav": {
+    "id": "en_1427",
+    "text": "And the best part is, after I tripped over absolutely nothing, I tried to play it off cool, but my shoe went flying and landed perfectly in the wedding cake.",
+    "text_with_mark": "And the best part is, after I tripped over absolutely nothing, I tried to play it off cool, but my shoe went flying and landed perfectly in the wedding cake.<laugh>",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 30,
+      "n_units": 30,
+      "norm": 1.0
+    },
+    "gt_pos": {
+      "index": 30,
+      "n_units": 30,
+      "norm": 1.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1434.wav": {
+    "id": "en_1434",
+    "text": "And then, I kid you not, the smoke alarm went off, the dog started barking at it, and I just stood there in a cloud of flour holding a burnt pancake. I looked ridiculous.",
+    "text_with_mark": "And then, I kid you not, the smoke alarm went off, the dog started barking at it, and I just stood there in a cloud of flour holding a burnt pancake. <laugh> I looked ridiculous.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 31,
+      "n_units": 34,
+      "norm": 0.9117647058823529
+    },
+    "gt_pos": {
+      "index": 31,
+      "n_units": 34,
+      "norm": 0.9117647058823529
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1437.wav": {
+    "id": "en_1437",
+    "text": "You want us to do what? You seriously think we can pull off a full-scale battle scene with a cardboard volcano and a ten-dollar budget? That is the most ridiculous thing I've ever heard.",
+    "text_with_mark": "You want us to do what? <laugh> You seriously think we can pull off a full-scale battle scene with a cardboard volcano and a ten-dollar budget? That is the most ridiculous thing I've ever heard.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 6,
+      "n_units": 36,
+      "norm": 0.16666666666666666
+    },
+    "gt_pos": {
+      "index": 6,
+      "n_units": 36,
+      "norm": 0.16666666666666666
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1436.wav": {
+    "id": "en_1436",
+    "text": "I swear, the look on his face when he realized he wasn't gonna make it. He just hung in the air for a second, then slid down the wall like a cartoon character.",
+    "text_with_mark": "I swear, the look on his face when he realized he wasn't gonna make it. He just hung in the air for a second, then slid down the wall like a cartoon character.",
+    "target_tag": "<laugh>",
+    "present": false,
+    "pos_unit": "word",
+    "pred_pos": null,
+    "gt_pos": {
+      "index": 15,
+      "n_units": 33,
+      "norm": 0.45454545454545453
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1438.wav": {
+    "id": "en_1438",
+    "text": "You remember that time my grandpa tried to deep-fry a twenty-pound turkey? The thing shot out of the oil like a rocket and landed in the neighbor's pool.",
+    "text_with_mark": "You remember that time my grandpa tried to deep-fry a twenty-pound turkey? <laugh> The thing shot out of the oil like a rocket and landed in the neighbor's pool.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 14,
+      "n_units": 30,
+      "norm": 0.4666666666666667
+    },
+    "gt_pos": {
+      "index": 14,
+      "n_units": 30,
+      "norm": 0.4666666666666667
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1439.wav": {
+    "id": "en_1439",
+    "text": "I spent a solid hour measuring everything, making sure it was perfectly level. Then I put one book on it, just one, and the whole shelf just... collapsed. It was the saddest, most dramatic slow-motion fall you've ever seen.",
+    "text_with_mark": "I spent a solid hour measuring everything, making sure it was perfectly level. Then I put one book on it, just one, and the whole shelf just... collapsed. <laugh> It was the saddest, most dramatic slow-motion fall you've ever seen.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 28,
+      "n_units": 40,
+      "norm": 0.7
+    },
+    "gt_pos": {
+      "index": 28,
+      "n_units": 40,
+      "norm": 0.7
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1443.wav": {
+    "id": "en_1443",
+    "text": "So he takes one look at my new haircut, squints, and goes, 'Did you lose a fight with a lawnmower?' I couldn't even be mad.",
+    "text_with_mark": "So he takes one look at my new haircut, squints, and goes, 'Did you lose a fight with a lawnmower?' <laugh> I couldn't even be mad.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 20,
+      "n_units": 25,
+      "norm": 0.8
+    },
+    "gt_pos": {
+      "index": 20,
+      "n_units": 25,
+      "norm": 0.8
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1442.wav": {
+    "id": "en_1442",
+    "text": "I swear, the look on his face when the 'surprise' party was for the wrong person... I almost died. I think my soul left my body.",
+    "text_with_mark": "I swear, the look on his face when the 'surprise' party was for the wrong person... <laugh> I almost died. I think my soul left my body.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 16,
+      "n_units": 26,
+      "norm": 0.6153846153846154
+    },
+    "gt_pos": {
+      "index": 16,
+      "n_units": 26,
+      "norm": 0.6153846153846154
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1445.wav": {
+    "id": "en_1445",
+    "text": "We told him to be on his best behavior, you know? So when the waiter came over, my son looks him dead in the eye and says, with the most serious face, 'My deepest condolences on the menu.' The whole table just... lost it.",
+    "text_with_mark": "We told him to be on his best behavior, you know? So when the waiter came over, my son looks him dead in the eye and says, with the most serious face, 'My deepest condolences on the menu.' <laugh> The whole table just... lost it.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 38,
+      "n_units": 44,
+      "norm": 0.8636363636363636
+    },
+    "gt_pos": {
+      "index": 38,
+      "n_units": 44,
+      "norm": 0.8636363636363636
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1431.wav": {
+    "id": "en_1431",
+    "text": "I can't believe you fell for that. I mean, I really sold it, didn't I? The look on your face was absolutely priceless.",
+    "text_with_mark": "I can't believe you fell for that. I mean, I really sold it, didn't I? The look on your face was absolutely priceless. <laugh>",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 23,
+      "n_units": 23,
+      "norm": 1.0
+    },
+    "gt_pos": {
+      "index": 7,
+      "n_units": 23,
+      "norm": 0.30434782608695654
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1444.wav": {
+    "id": "en_1444",
+    "text": "I was so sure I had it. I'm holding this... this massive fish, trying to pose for the camera, and it gives this one huge flop. Slips right out of my hands, hits the water with this huge splash, and soaks me from head to toe. I just stood there, dripping.",
+    "text_with_mark": "I was so sure I had it. I'm holding this... this massive fish, trying to pose for the camera, and it gives this one huge flop. <laugh> Slips right out of my hands, hits the water with this huge splash, and soaks me from head to toe. I just stood there, dripping.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 26,
+      "n_units": 51,
+      "norm": 0.5098039215686274
+    },
+    "gt_pos": {
+      "index": 26,
+      "n_units": 51,
+      "norm": 0.5098039215686274
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1446.wav": {
+    "id": "en_1446",
+    "text": "I was trying to explain offside to her, right? And she goes, 'So the goalie just isn't allowed to have friends in that part of the field?' I lost it.",
+    "text_with_mark": "I was trying to explain offside to her, right? And she goes, 'So the goalie just isn't allowed to have friends in that part of the field?' <laugh> I lost it.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 27,
+      "n_units": 30,
+      "norm": 0.9
+    },
+    "gt_pos": {
+      "index": 27,
+      "n_units": 30,
+      "norm": 0.9
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1422.wav": {
+    "id": "en_1422",
+    "text": "Oh my god, do you remember that time in college when you tried to dye your hair purple and it came out bright, patchy green? You looked like a sad, moldy piece of broccoli for a month.",
+    "text_with_mark": "Oh my god, do you remember that time in college when you tried to dye your hair purple and it came out bright, patchy green? You looked like a sad, moldy piece of broccoli for a month.",
+    "target_tag": "<laugh>",
+    "present": false,
+    "pos_unit": "word",
+    "pred_pos": null,
+    "gt_pos": {
+      "index": 25,
+      "n_units": 37,
+      "norm": 0.6756756756756757
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1426.wav": {
+    "id": "en_1426",
+    "text": "I remember my first time trying to ski. I spent more time tangled up like a pretzel than actually standing. My skis ended up pointing in opposite directions... it was a complete yard sale.",
+    "text_with_mark": "I remember my first time trying to ski. I spent more time tangled up like a pretzel than actually standing. <laugh> My skis ended up pointing in opposite directions... it was a complete yard sale.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 20,
+      "n_units": 34,
+      "norm": 0.5882352941176471
+    },
+    "gt_pos": {
+      "index": 20,
+      "n_units": 34,
+      "norm": 0.5882352941176471
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1448.wav": {
+    "id": "en_1448",
+    "text": "You're telling me you spent twenty minutes trying to get it down, and then it just dropped the whole thing on your head? Oh, that's priceless.",
+    "text_with_mark": "You're telling me you spent twenty minutes trying to get it down, and then it just dropped the whole thing on your head? <laugh> Oh, that's priceless.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 23,
+      "n_units": 26,
+      "norm": 0.8846153846153846
+    },
+    "gt_pos": {
+      "index": 23,
+      "n_units": 26,
+      "norm": 0.8846153846153846
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1441.wav": {
+    "id": "en_1441",
+    "text": "I swear, the cat looked me dead in the eye, and then just pushed the entire glass of water off the table. Just... straight off. I couldn't even be mad.",
+    "text_with_mark": "I swear, the cat looked me dead in the eye, and then just pushed the entire glass of water off the table. Just... <laugh> straight off. I couldn't even be mad.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 23,
+      "n_units": 30,
+      "norm": 0.7666666666666667
+    },
+    "gt_pos": {
+      "index": 25,
+      "n_units": 30,
+      "norm": 0.8333333333333334
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1447.wav": {
+    "id": "en_1447",
+    "text": "I can't believe I'm admitting this, but my first driving lesson ended with me getting the car stuck sideways in a drive-thru. My dad just looked at me and said, 'Well, at least the fries are close.'",
+    "text_with_mark": "I can't believe I'm admitting this, but my first driving lesson ended with me getting the car stuck sideways in a drive-thru.<laugh> My dad just looked at me and said, 'Well, at least the fries are close.'",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 23,
+      "n_units": 38,
+      "norm": 0.6052631578947368
+    },
+    "gt_pos": {
+      "index": 23,
+      "n_units": 38,
+      "norm": 0.6052631578947368
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1440.wav": {
+    "id": "en_1440",
+    "text": "I was trying so hard to be sophisticated, right? So I ordered the escargots. The first one I tried to grab with the tongs shot across the table and landed right in the other guy's water glass.",
+    "text_with_mark": "I was trying so hard to be sophisticated, right? So I ordered the escargots. The first one I tried to grab with the tongs shot across the table and landed right in the other guy's water glass.<laugh>",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 37,
+      "n_units": 37,
+      "norm": 1.0
+    },
+    "gt_pos": {
+      "index": 24,
+      "n_units": 37,
+      "norm": 0.6486486486486487
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1652.wav": {
+    "id": "en_1652",
+    "text": "I thought I'd be done by now. Guess it's going to be another late night.",
+    "text_with_mark": "<sigh>I thought I'd be done by now. Guess it's going to be another late night.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 15,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 15,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1450.wav": {
+    "id": "en_1450",
+    "text": "So I thought, how hard can it be to make a fancy latte art? I ended up with a... well, let's just say my coffee looked like a Jackson Pollock painting gone wrong.",
+    "text_with_mark": "So I thought, how hard can it be to make a fancy latte art? I ended up with a... <laugh> well, let's just say my coffee looked like a Jackson Pollock painting gone wrong.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 19,
+      "n_units": 33,
+      "norm": 0.5757575757575758
+    },
+    "gt_pos": {
+      "index": 19,
+      "n_units": 33,
+      "norm": 0.5757575757575758
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_15.wav": {
+    "id": "en_15",
+    "text": "I can't believe I didn't see it before. The missing piece of the puzzle isn't in the victim's testimony... it's in the security guard's logbook. It all makes sense now.",
+    "text_with_mark": "I can't believe I didn't see it before. The missing piece of the puzzle isn't in the victim's testimony... <ah> it's in the security guard's logbook. It all makes sense now.",
+    "target_tag": "<ah>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 19,
+      "n_units": 30,
+      "norm": 0.6333333333333333
+    },
+    "gt_pos": {
+      "index": 19,
+      "n_units": 30,
+      "norm": 0.6333333333333333
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1651.wav": {
+    "id": "en_1651",
+    "text": "Well, there goes my paycheck. Again. Another month, another mountain of debt.",
+    "text_with_mark": "Well, there goes my paycheck. Again. <sigh> Another month, another mountain of debt.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 6,
+      "n_units": 12,
+      "norm": 0.5
+    },
+    "gt_pos": {
+      "index": 6,
+      "n_units": 12,
+      "norm": 0.5
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1653.wav": {
+    "id": "en_1653",
+    "text": "I really thought this time would be different. I guess I was wrong again. It's always the same story.",
+    "text_with_mark": "I really thought this time would be different. <sigh> I guess I was wrong again. It's always the same story.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 8,
+      "n_units": 19,
+      "norm": 0.42105263157894735
+    },
+    "gt_pos": {
+      "index": 8,
+      "n_units": 19,
+      "norm": 0.42105263157894735
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1449.wav": {
+    "id": "en_1449",
+    "text": "And then, the dog, with the entire birthday cake in its mouth, just looks at us, wags its tail, and tries to bark. But all that comes out is this muffled 'woof' and a shower of frosting.",
+    "text_with_mark": "And then, the dog, with the entire birthday cake in its mouth, just looks at us, wags its tail, and tries to bark.<laugh> But all that comes out is this muffled 'woof' and a shower of frosting.",
+    "target_tag": "<laugh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 23,
+      "n_units": 37,
+      "norm": 0.6216216216216216
+    },
+    "gt_pos": {
+      "index": 23,
+      "n_units": 37,
+      "norm": 0.6216216216216216
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1654.wav": {
+    "id": "en_1654",
+    "text": "Look at this place. I really don't have the energy for this today.",
+    "text_with_mark": "<sigh> Look at this place. I really don't have the energy for this today.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 13,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 13,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1657.wav": {
+    "id": "en_1657",
+    "text": "I really thought this time would be different. I guess I just got my hopes up for nothing again.",
+    "text_with_mark": "I really thought this time would be different. <sigh>I guess I just got my hopes up for nothing again.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 8,
+      "n_units": 19,
+      "norm": 0.42105263157894735
+    },
+    "gt_pos": {
+      "index": 8,
+      "n_units": 19,
+      "norm": 0.42105263157894735
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1659.wav": {
+    "id": "en_1659",
+    "text": "I look at this picture and... we were so happy then. I just wish I could go back.",
+    "text_with_mark": "I look at this picture and... <sigh> we were so happy then. I just wish I could go back.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 6,
+      "n_units": 18,
+      "norm": 0.3333333333333333
+    },
+    "gt_pos": {
+      "index": 6,
+      "n_units": 18,
+      "norm": 0.3333333333333333
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_16.wav": {
+    "id": "en_16",
+    "text": "Wait a minute... I see. So if I reverse the polarity on this capacitor, it should complete the circuit.",
+    "text_with_mark": "Wait a minute...<ah> I see. So if I reverse the polarity on this capacitor, it should complete the circuit.",
+    "target_tag": "<ah>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 3,
+      "n_units": 19,
+      "norm": 0.15789473684210525
+    },
+    "gt_pos": {
+      "index": 3,
+      "n_units": 19,
+      "norm": 0.15789473684210525
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1658.wav": {
+    "id": "en_1658",
+    "text": "Alright. I understand. No, it's fine, thank you for letting me know. I just... I really thought this time would be different.",
+    "text_with_mark": "Alright. I understand. No, it's fine, thank you for letting me know. <sigh> I just... I really thought this time would be different.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 12,
+      "n_units": 22,
+      "norm": 0.5454545454545454
+    },
+    "gt_pos": {
+      "index": 12,
+      "n_units": 22,
+      "norm": 0.5454545454545454
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1656.wav": {
+    "id": "en_1656",
+    "text": "I really thought this time would be different. I guess some things never change.",
+    "text_with_mark": "<sigh> I really thought this time would be different. I guess some things never change.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 14,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 14,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1661.wav": {
+    "id": "en_1661",
+    "text": "Okay... phone is off, tea is hot, and the world can wait. Finally. I can just... breathe.",
+    "text_with_mark": "Okay... phone is off, tea is hot, and the world can wait. <sigh> Finally. I can just... breathe.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 12,
+      "n_units": 17,
+      "norm": 0.7058823529411765
+    },
+    "gt_pos": {
+      "index": 12,
+      "n_units": 17,
+      "norm": 0.7058823529411765
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1660.wav": {
+    "id": "en_1660",
+    "text": "I thought I was almost finished, and then you handed me this.",
+    "text_with_mark": "<sigh>I thought I was almost finished, and then you handed me this.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 12,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 12,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1663.wav": {
+    "id": "en_1663",
+    "text": "I've already tried that. Look, can I just talk to a person? This is ridiculous.",
+    "text_with_mark": "I've already tried that. <sigh> Look, can I just talk to a person? This is ridiculous.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 4,
+      "n_units": 15,
+      "norm": 0.26666666666666666
+    },
+    "gt_pos": {
+      "index": 4,
+      "n_units": 15,
+      "norm": 0.26666666666666666
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1655.wav": {
+    "id": "en_1655",
+    "text": "I turn my back for five minutes... five minutes. And it looks like a hurricane went through here again. Well, at least you had fun, I guess.",
+    "text_with_mark": "I turn my back for five minutes... five minutes. <sigh> And it looks like a hurricane went through here again. Well, at least you had fun, I guess.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 9,
+      "n_units": 27,
+      "norm": 0.3333333333333333
+    },
+    "gt_pos": {
+      "index": 9,
+      "n_units": 27,
+      "norm": 0.3333333333333333
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1666.wav": {
+    "id": "en_1666",
+    "text": "It's beautiful, isn't it? I just wish he could have seen it.",
+    "text_with_mark": "<sigh> It's beautiful, isn't it? I just wish he could have seen it.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 12,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 12,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1662.wav": {
+    "id": "en_1662",
+    "text": "Another one? I thought we were done with these for the month. It just never ends, does it?",
+    "text_with_mark": "Another one? <sigh> I thought we were done with these for the month. It just never ends, does it?",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 2,
+      "n_units": 18,
+      "norm": 0.1111111111111111
+    },
+    "gt_pos": {
+      "index": 2,
+      "n_units": 18,
+      "norm": 0.1111111111111111
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1664.wav": {
+    "id": "en_1664",
+    "text": "I've been staring at this screen all day. I think I'm just going to call it.",
+    "text_with_mark": "<sigh> I've been staring at this screen all day. I think I'm just going to call it.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 16,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 16,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1667.wav": {
+    "id": "en_1667",
+    "text": "I was really hoping to finish this project tonight. It just feels like every time I solve one problem, two more pop up.",
+    "text_with_mark": "I was really hoping to finish this project tonight. <sigh> It just feels like every time I solve one problem, two more pop up.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 9,
+      "n_units": 23,
+      "norm": 0.391304347826087
+    },
+    "gt_pos": {
+      "index": 9,
+      "n_units": 23,
+      "norm": 0.391304347826087
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1665.wav": {
+    "id": "en_1665",
+    "text": "Another late night at the office. I just want to go home.",
+    "text_with_mark": "Another late night at the office. <sigh> I just want to go home.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 6,
+      "n_units": 12,
+      "norm": 0.5
+    },
+    "gt_pos": {
+      "index": 6,
+      "n_units": 12,
+      "norm": 0.5
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1668.wav": {
+    "id": "en_1668",
+    "text": "I just don't know what to do anymore. Every time I think we're making progress, we end up right back where we started.",
+    "text_with_mark": "<sigh> I just don't know what to do anymore. Every time I think we're making progress, we end up right back where we started.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 23,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 23,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1673.wav": {
+    "id": "en_1673",
+    "text": "You're impossible. I leave you alone for five minutes, and the whole kitchen is... white.",
+    "text_with_mark": "<sigh> You're impossible. I leave you alone for five minutes, and the whole kitchen is... white.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 15,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 15,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1669.wav": {
+    "id": "en_1669",
+    "text": "Another rejection letter. Well, I guess it's back to the drawing board.",
+    "text_with_mark": "<sigh>Another rejection letter. Well, I guess it's back to the drawing board.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 12,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 12,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1674.wav": {
+    "id": "en_1674",
+    "text": "Another month, another ridiculous phone bill. I really thought I'd managed to keep it down this time.",
+    "text_with_mark": "Another month, another ridiculous phone bill. <sigh> I really thought I'd managed to keep it down this time.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 6,
+      "n_units": 17,
+      "norm": 0.35294117647058826
+    },
+    "gt_pos": {
+      "index": 6,
+      "n_units": 17,
+      "norm": 0.35294117647058826
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1672.wav": {
+    "id": "en_1672",
+    "text": "Look at this stack of paperwork. It's never-ending. I thought I was almost done, but then they sent more.",
+    "text_with_mark": "Look at this stack of paperwork. <sigh> It's never-ending. I thought I was almost done, but then they sent more.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 6,
+      "n_units": 20,
+      "norm": 0.3
+    },
+    "gt_pos": {
+      "index": 6,
+      "n_units": 20,
+      "norm": 0.3
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1671.wav": {
+    "id": "en_1671",
+    "text": "Another rainy day. I was really hoping to go for a walk. When is this weather going to let up?",
+    "text_with_mark": "Another rainy day. <sigh> I was really hoping to go for a walk. When is this weather going to let up?",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 3,
+      "n_units": 20,
+      "norm": 0.15
+    },
+    "gt_pos": {
+      "index": 3,
+      "n_units": 20,
+      "norm": 0.15
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1670.wav": {
+    "id": "en_1670",
+    "text": "I guess these dishes aren't going to wash themselves. Might as well get it over with.",
+    "text_with_mark": "<sigh>I guess these dishes aren't going to wash themselves. Might as well get it over with.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 16,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 16,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1678.wav": {
+    "id": "en_1678",
+    "text": "Alright, I think that's the last box. Finally. I didn't think we'd ever finish.",
+    "text_with_mark": "Alright, I think that's the last box. <sigh> Finally. I didn't think we'd ever finish.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 7,
+      "n_units": 14,
+      "norm": 0.5
+    },
+    "gt_pos": {
+      "index": 7,
+      "n_units": 14,
+      "norm": 0.5
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1676.wav": {
+    "id": "en_1676",
+    "text": "I remember when we used to come here all the time. It's just not the same without her.",
+    "text_with_mark": "I remember when we used to come here all the time. <sigh> It's just not the same without her.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 11,
+      "n_units": 18,
+      "norm": 0.6111111111111112
+    },
+    "gt_pos": {
+      "index": 11,
+      "n_units": 18,
+      "norm": 0.6111111111111112
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1675.wav": {
+    "id": "en_1675",
+    "text": "Still nothing. I really thought he would've texted back by now.",
+    "text_with_mark": "<sigh>Still nothing. I really thought he would've texted back by now.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 11,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 11,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1677.wav": {
+    "id": "en_1677",
+    "text": "I asked you to clean this room an hour ago. It looks exactly the same.",
+    "text_with_mark": "<sigh>I asked you to clean this room an hour ago. It looks exactly the same.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 15,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 15,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1679.wav": {
+    "id": "en_1679",
+    "text": "Alright, let's see what we have here. Another stack of expense reports... I guess I'm not leaving anytime soon.",
+    "text_with_mark": "Alright, let's see what we have here. Another stack of expense reports... <sigh> I guess I'm not leaving anytime soon.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 12,
+      "n_units": 19,
+      "norm": 0.631578947368421
+    },
+    "gt_pos": {
+      "index": 12,
+      "n_units": 19,
+      "norm": 0.631578947368421
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1683.wav": {
+    "id": "en_1683",
+    "text": "I just wish... I wish I knew what to say to make it better. But I don't.",
+    "text_with_mark": "<sigh> I just wish... I wish I knew what to say to make it better. But I don't.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 17,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 17,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1685.wav": {
+    "id": "en_1685",
+    "text": "I really thought this time would be different. I guess some things just aren't meant to be.",
+    "text_with_mark": "I really thought this time would be different. <sigh> I guess some things just aren't meant to be.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 8,
+      "n_units": 17,
+      "norm": 0.47058823529411764
+    },
+    "gt_pos": {
+      "index": 8,
+      "n_units": 17,
+      "norm": 0.47058823529411764
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1682.wav": {
+    "id": "en_1682",
+    "text": "And... sent. Finally. I don't think I've seen my own bed in three days.",
+    "text_with_mark": "<sigh> And... sent. Finally. I don't think I've seen my own bed in three days.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 14,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 14,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1686.wav": {
+    "id": "en_1686",
+    "text": "I can't believe I dropped it again. It's just... it's not my day, is it?",
+    "text_with_mark": "I can't believe I dropped it again. <sigh> It's just... it's not my day, is it?",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 7,
+      "n_units": 15,
+      "norm": 0.4666666666666667
+    },
+    "gt_pos": {
+      "index": 7,
+      "n_units": 15,
+      "norm": 0.4666666666666667
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1684.wav": {
+    "id": "en_1684",
+    "text": "It's funny, you know? I still remember the way the sun felt on that day. We were so young.",
+    "text_with_mark": "<sigh>It's funny, you know? I still remember the way the sun felt on that day. We were so young.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 19,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 19,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1680.wav": {
+    "id": "en_1680",
+    "text": "I asked for one thing. Just one. Clean your room. I guess that was too much to ask.",
+    "text_with_mark": "<sigh>I asked for one thing. Just one. Clean your room. I guess that was too much to ask.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 18,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 18,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1687.wav": {
+    "id": "en_1687",
+    "text": "Another 'urgent' request from marketing, the quarterly reports are due Friday, and I still haven't finished the slides for tomorrow's presentation. Alright. One thing at a time, I guess.",
+    "text_with_mark": "Another 'urgent' request from marketing, the quarterly reports are due Friday, and I still haven't finished the slides for tomorrow's presentation. <sigh> Alright. One thing at a time, I guess.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 21,
+      "n_units": 29,
+      "norm": 0.7241379310344828
+    },
+    "gt_pos": {
+      "index": 21,
+      "n_units": 29,
+      "norm": 0.7241379310344828
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1689.wav": {
+    "id": "en_1689",
+    "text": "It's just... I've been running on fumes all week. I don't think I have anything left to give.",
+    "text_with_mark": "<sigh> It's just... I've been running on fumes all week. I don't think I have anything left to give.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 18,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 18,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1691.wav": {
+    "id": "en_1691",
+    "text": "I've gone over the numbers three times. It's just... it's not adding up. There must be a mistake somewhere, but I can't find it.",
+    "text_with_mark": "I've gone over the numbers three times. It's just... it's not adding up. <sigh> There must be a mistake somewhere, but I can't find it.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 13,
+      "n_units": 24,
+      "norm": 0.5416666666666666
+    },
+    "gt_pos": {
+      "index": 13,
+      "n_units": 24,
+      "norm": 0.5416666666666666
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1690.wav": {
+    "id": "en_1690",
+    "text": "Look, I've explained it three times now. The data just doesn't support your conclusion. I don't know how to make it any clearer.",
+    "text_with_mark": "Look, I've explained it three times now. <sigh> The data just doesn't support your conclusion. I don't know how to make it any clearer.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 7,
+      "n_units": 23,
+      "norm": 0.30434782608695654
+    },
+    "gt_pos": {
+      "index": 7,
+      "n_units": 23,
+      "norm": 0.30434782608695654
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1688.wav": {
+    "id": "en_1688",
+    "text": "Oh, that's better. I think I could stay in here forever. All the stress is just... melting away.",
+    "text_with_mark": "Oh, that's better. <sigh> I think I could stay in here forever. All the stress is just... melting away.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 3,
+      "n_units": 18,
+      "norm": 0.16666666666666666
+    },
+    "gt_pos": {
+      "index": 3,
+      "n_units": 18,
+      "norm": 0.16666666666666666
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1695.wav": {
+    "id": "en_1695",
+    "text": "I've read the instructions a dozen times, and this piece still won't fit. Why do they make these things so complicated?",
+    "text_with_mark": "I've read the instructions a dozen times, and this piece still won't fit. <sigh> Why do they make these things so complicated?",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 13,
+      "n_units": 21,
+      "norm": 0.6190476190476191
+    },
+    "gt_pos": {
+      "index": 13,
+      "n_units": 21,
+      "norm": 0.6190476190476191
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1694.wav": {
+    "id": "en_1694",
+    "text": "I've gone over the numbers a dozen times. There's just no way. We're going to have to let him go.",
+    "text_with_mark": "I've gone over the numbers a dozen times. <sigh> There's just no way. We're going to have to let him go.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 8,
+      "n_units": 20,
+      "norm": 0.4
+    },
+    "gt_pos": {
+      "index": 8,
+      "n_units": 20,
+      "norm": 0.4
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1430.wav": {
+    "id": "en_1430",
+    "text": "Okay, in my defense, the schematics I drew in crayon were flawless. I genuinely thought we'd cracked interstellar travel with that Pringles can. It wasn't my fault the cat decided to sit on the launchpad right at ignition.",
+    "text_with_mark": "Okay, in my defense, the schematics I drew in crayon were flawless. I genuinely thought we'd cracked interstellar travel with that Pringles can. It wasn't my fault the cat decided to sit on the launchpad right at ignition.",
+    "target_tag": "<laugh>",
+    "present": false,
+    "pos_unit": "word",
+    "pred_pos": null,
+    "gt_pos": {
+      "index": 23,
+      "n_units": 38,
+      "norm": 0.6052631578947368
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1697.wav": {
+    "id": "en_1697",
+    "text": "Well, so much for that surprise. It looked so easy in the video.",
+    "text_with_mark": "<sigh> Well, so much for that surprise. It looked so easy in the video.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 13,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 13,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1681.wav": {
+    "id": "en_1681",
+    "text": "And... done. I can finally just sit here and look at it. It's... perfect.",
+    "text_with_mark": "And... done. <sigh> I can finally just sit here and look at it. It's... perfect.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 2,
+      "n_units": 14,
+      "norm": 0.14285714285714285
+    },
+    "gt_pos": {
+      "index": 2,
+      "n_units": 14,
+      "norm": 0.14285714285714285
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1699.wav": {
+    "id": "en_1699",
+    "text": "Just look at that view. We finally made it to the top. I could stay here all day.",
+    "text_with_mark": "Just look at that view. We finally made it to the top. <sigh> I could stay here all day.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 12,
+      "n_units": 18,
+      "norm": 0.6666666666666666
+    },
+    "gt_pos": {
+      "index": 12,
+      "n_units": 18,
+      "norm": 0.6666666666666666
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1698.wav": {
+    "id": "en_1698",
+    "text": "Alright, I've finished the report, sent the emails, and called the client. Now what's next... right. The quarterly review.",
+    "text_with_mark": "Alright, I've finished the report, sent the emails, and called the client. Now what's next... <sigh> right. The quarterly review.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 15,
+      "n_units": 19,
+      "norm": 0.7894736842105263
+    },
+    "gt_pos": {
+      "index": 15,
+      "n_units": 19,
+      "norm": 0.7894736842105263
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1700.wav": {
+    "id": "en_1700",
+    "text": "Look at this view. After all that hiking, all that climbing... it was worth it.",
+    "text_with_mark": "Look at this view. <sigh> After all that hiking, all that climbing... it was worth it.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 4,
+      "n_units": 15,
+      "norm": 0.26666666666666666
+    },
+    "gt_pos": {
+      "index": 4,
+      "n_units": 15,
+      "norm": 0.26666666666666666
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1692.wav": {
+    "id": "en_1692",
+    "text": "Okay, that's the last of the dishes. Now I just have to... oh, right. The laundry. It never ends, does it?",
+    "text_with_mark": "Okay, that's the last of the dishes.<sigh> Now I just have to... oh, right. The laundry. It never ends, does it?",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 7,
+      "n_units": 21,
+      "norm": 0.3333333333333333
+    },
+    "gt_pos": {
+      "index": 7,
+      "n_units": 21,
+      "norm": 0.3333333333333333
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1693.wav": {
+    "id": "en_1693",
+    "text": "Another rejection. I just... I don't know what else I can do.",
+    "text_with_mark": "Another rejection. <sigh> I just... I don't know what else I can do.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 2,
+      "n_units": 12,
+      "norm": 0.16666666666666666
+    },
+    "gt_pos": {
+      "index": 2,
+      "n_units": 12,
+      "norm": 0.16666666666666666
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_1696.wav": {
+    "id": "en_1696",
+    "text": "Alright, let's see what we've got to deal with this month. Rent, utilities, car payment... and that's just the start.",
+    "text_with_mark": "Alright, let's see what we've got to deal with this month. <sigh> Rent, utilities, car payment... and that's just the start.",
+    "target_tag": "<sigh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 11,
+      "n_units": 20,
+      "norm": 0.55
+    },
+    "gt_pos": {
+      "index": 11,
+      "n_units": 20,
+      "norm": 0.55
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_18.wav": {
+    "id": "en_18",
+    "text": "I've been looking for my glasses all morning. I checked the kitchen, the bedroom... the top of my head. They were on my head the whole time.",
+    "text_with_mark": "I've been looking for my glasses all morning. I checked the kitchen, the bedroom... <oh> the top of my head. They were on my head the whole time.",
+    "target_tag": "<oh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 14,
+      "n_units": 27,
+      "norm": 0.5185185185185185
+    },
+    "gt_pos": {
+      "index": 14,
+      "n_units": 27,
+      "norm": 0.5185185185185185
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_22.wav": {
+    "id": "en_22",
+    "text": "Right, I see it now. So the X isn't the final spot, it's just... I get it now. It's a reference point.",
+    "text_with_mark": "Right, I see it now. So the X isn't the final spot, it's just... <oh> I get it now. It's a reference point.",
+    "target_tag": "<oh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 14,
+      "n_units": 22,
+      "norm": 0.6363636363636364
+    },
+    "gt_pos": {
+      "index": 14,
+      "n_units": 22,
+      "norm": 0.6363636363636364
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_17.wav": {
+    "id": "en_17",
+    "text": "You're right. I can't believe I didn't see it. I must have walked past it a dozen times.",
+    "text_with_mark": "<oh> You're right. I can't believe I didn't see it. I must have walked past it a dozen times.",
+    "target_tag": "<oh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 18,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 18,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_20.wav": {
+    "id": "en_20",
+    "text": "Wait a second, if I move this piece here... That's how it works! I've been looking at it all wrong.",
+    "text_with_mark": "Wait a second, if I move this piece here... <oh> That's how it works! I've been looking at it all wrong.",
+    "target_tag": "<oh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 9,
+      "n_units": 20,
+      "norm": 0.45
+    },
+    "gt_pos": {
+      "index": 9,
+      "n_units": 20,
+      "norm": 0.45
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_23.wav": {
+    "id": "en_23",
+    "text": "I can't believe I forgot to bring the files. The presentation is in ten minutes... Wait, they sent an email with the link this morning, didn't they?",
+    "text_with_mark": "I can't believe I forgot to bring the files. The presentation is in ten minutes... <oh> Wait, they sent an email with the link this morning, didn't they?",
+    "target_tag": "<oh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 15,
+      "n_units": 27,
+      "norm": 0.5555555555555556
+    },
+    "gt_pos": {
+      "index": 15,
+      "n_units": 27,
+      "norm": 0.5555555555555556
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_19.wav": {
+    "id": "en_19",
+    "text": "I thought you said you put the keys on the hook. They're not here. I've checked my pockets, the car... Oh. They're in my hand. They've been in my hand this whole time.",
+    "text_with_mark": "I thought you said you put the keys on the hook. They're not here. I've checked my pockets, the car... <oh> Oh. They're in my hand. They've been in my hand this whole time.",
+    "target_tag": "<oh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 20,
+      "n_units": 33,
+      "norm": 0.6060606060606061
+    },
+    "gt_pos": {
+      "index": 20,
+      "n_units": 33,
+      "norm": 0.6060606060606061
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_25.wav": {
+    "id": "en_25",
+    "text": "I see, you just tap it lightly. I've been pressing it down like a doorbell this whole time.",
+    "text_with_mark": "<oh> I see, you just tap it lightly. I've been pressing it down like a doorbell this whole time.",
+    "target_tag": "<oh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 18,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 18,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_24.wav": {
+    "id": "en_24",
+    "text": "Wait, I just remembered. The meeting isn't at three, it's at two! We have to go now!",
+    "text_with_mark": "<oh> Wait, I just remembered. The meeting isn't at three, it's at two! We have to go now!",
+    "target_tag": "<oh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 17,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 17,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_27.wav": {
+    "id": "en_27",
+    "text": "I was looking for my keys everywhere—tore the whole house apart. They were in my coat pocket the entire time. I see now.",
+    "text_with_mark": "I was looking for my keys everywhere—tore the whole house apart. <oh> They were in my coat pocket the entire time. I see now.",
+    "target_tag": "<oh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 12,
+      "n_units": 24,
+      "norm": 0.5
+    },
+    "gt_pos": {
+      "index": 12,
+      "n_units": 24,
+      "norm": 0.5
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_26.wav": {
+    "id": "en_26",
+    "text": "Now I get it. I was turning the wrench the wrong way the whole time.",
+    "text_with_mark": "<oh> Now I get it. I was turning the wrench the wrong way the whole time.",
+    "target_tag": "<oh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 15,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 15,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_2.wav": {
+    "id": "en_2",
+    "text": "So you find the common... I get it now. You have to make the bottom numbers the same before you can add the tops. Okay, that makes so much more sense.",
+    "text_with_mark": "So you find the common... <ah> I get it now. You have to make the bottom numbers the same before you can add the tops. Okay, that makes so much more sense.",
+    "target_tag": "<ah>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 5,
+      "n_units": 31,
+      "norm": 0.16129032258064516
+    },
+    "gt_pos": {
+      "index": 5,
+      "n_units": 31,
+      "norm": 0.16129032258064516
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_28.wav": {
+    "id": "en_28",
+    "text": "Right, I see now. That connection was the missing piece. Thank you.",
+    "text_with_mark": "<oh> Right, I see now. That connection was the missing piece. Thank you.",
+    "target_tag": "<oh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 12,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 12,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_3.wav": {
+    "id": "en_3",
+    "text": "I swear I've checked my coat, the kitchen counter, the car... where could they... Right on the hook by the door. Of course.",
+    "text_with_mark": "I swear I've checked my coat, the kitchen counter, the car... where could they... <ah> Right on the hook by the door. Of course.",
+    "target_tag": "<ah>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 14,
+      "n_units": 23,
+      "norm": 0.6086956521739131
+    },
+    "gt_pos": {
+      "index": 14,
+      "n_units": 23,
+      "norm": 0.6086956521739131
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_31.wav": {
+    "id": "en_31",
+    "text": "Right, I see it now. I was looking at it completely backwards.",
+    "text_with_mark": "<oh> Right, I see it now. I was looking at it completely backwards.",
+    "target_tag": "<oh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 12,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 12,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_21.wav": {
+    "id": "en_21",
+    "text": "I've been trying to fit the blue piece next to the green one, but the angles are all wrong. It just won't... wait a minute. The instructions show it connecting to the red piece first. I see. That changes everything.",
+    "text_with_mark": "I've been trying to fit the blue piece next to the green one, but the angles are all wrong. It just won't... wait a minute. <oh> The instructions show it connecting to the red piece first. I see. That changes everything.",
+    "target_tag": "<oh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 25,
+      "n_units": 40,
+      "norm": 0.625
+    },
+    "gt_pos": {
+      "index": 25,
+      "n_units": 40,
+      "norm": 0.625
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_30.wav": {
+    "id": "en_30",
+    "text": "Wait, you're telling me the meeting was moved to three? I had it down for two this whole time. I guess that's why the conference room was empty.",
+    "text_with_mark": "Wait, you're telling me the meeting was moved to three? <oh> I had it down for two this whole time. I guess that's why the conference room was empty.",
+    "target_tag": "<oh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 10,
+      "n_units": 28,
+      "norm": 0.35714285714285715
+    },
+    "gt_pos": {
+      "index": 10,
+      "n_units": 28,
+      "norm": 0.35714285714285715
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_34.wav": {
+    "id": "en_34",
+    "text": "Well, the battery's got a full charge, and the spark plugs are new. I don't think this is standard wiring, though. Looks like a custom job.",
+    "text_with_mark": "Well, the battery's got a full charge, and the spark plugs are new. <hmm> I don't think this is standard wiring, though. Looks like a custom job.",
+    "target_tag": "<hmm>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 13,
+      "n_units": 26,
+      "norm": 0.5
+    },
+    "gt_pos": {
+      "index": 13,
+      "n_units": 26,
+      "norm": 0.5
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_35.wav": {
+    "id": "en_35",
+    "text": "So you're telling me that Mittens somehow managed to open the fridge door and pull out the chicken. That's quite a story.",
+    "text_with_mark": "So you're telling me that Mittens somehow managed to open the fridge door and pull out the chicken. <hmm> That's quite a story.",
+    "target_tag": "<hmm>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 18,
+      "n_units": 22,
+      "norm": 0.8181818181818182
+    },
+    "gt_pos": {
+      "index": 18,
+      "n_units": 22,
+      "norm": 0.8181818181818182
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_33.wav": {
+    "id": "en_33",
+    "text": "The pattern is almost complete, I just need to figure out how this last piece fits. It doesn't seem to go here, or here...",
+    "text_with_mark": "The pattern is almost complete, I just need to figure out how this last piece fits. <hmm> It doesn't seem to go here, or here...",
+    "target_tag": "<hmm>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 16,
+      "n_units": 24,
+      "norm": 0.6666666666666666
+    },
+    "gt_pos": {
+      "index": 16,
+      "n_units": 24,
+      "norm": 0.6666666666666666
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_29.wav": {
+    "id": "en_29",
+    "text": "I've been looking for these photos everywhere. I checked all the drawers, the cloud storage... wait. You didn't put them on that old hard drive, did you? I get it now. That's why I couldn't find them.",
+    "text_with_mark": "I've been looking for these photos everywhere. I checked all the drawers, the cloud storage... wait. You didn't put them on that old hard drive, did you? <oh> I get it now. That's why I couldn't find them.",
+    "target_tag": "<oh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 27,
+      "n_units": 37,
+      "norm": 0.7297297297297297
+    },
+    "gt_pos": {
+      "index": 27,
+      "n_units": 37,
+      "norm": 0.7297297297297297
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_32.wav": {
+    "id": "en_32",
+    "text": "You're moving to Canada? I... I didn't know. Well, I'm going to miss having you around.",
+    "text_with_mark": "You're moving to Canada? <oh> I... I didn't know. Well, I'm going to miss having you around.",
+    "target_tag": "<oh>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 4,
+      "n_units": 16,
+      "norm": 0.25
+    },
+    "gt_pos": {
+      "index": 4,
+      "n_units": 16,
+      "norm": 0.25
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_37.wav": {
+    "id": "en_37",
+    "text": "I swear I had them when I came in. I put my coat on the hook, and my bag on the chair... where did I put them?",
+    "text_with_mark": "I swear I had them when I came in. <hmm> I put my coat on the hook, and my bag on the chair... where did I put them?",
+    "target_tag": "<hmm>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 9,
+      "n_units": 27,
+      "norm": 0.3333333333333333
+    },
+    "gt_pos": {
+      "index": 9,
+      "n_units": 27,
+      "norm": 0.3333333333333333
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_39.wav": {
+    "id": "en_39",
+    "text": "The soil pH is fine, it's getting plenty of sun... I don't see any pests. What could be stunting its growth like this?",
+    "text_with_mark": "<hmm> The soil pH is fine, it's getting plenty of sun... I don't see any pests. What could be stunting its growth like this?",
+    "target_tag": "<hmm>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 23,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 23,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_42.wav": {
+    "id": "en_42",
+    "text": "So you're saying she sold the company... without telling any of the partners? That's a bold move.",
+    "text_with_mark": "So you're saying she sold the company... without telling any of the partners? <hmm> That's a bold move.",
+    "target_tag": "<hmm>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 13,
+      "n_units": 17,
+      "norm": 0.7647058823529411
+    },
+    "gt_pos": {
+      "index": 13,
+      "n_units": 17,
+      "norm": 0.7647058823529411
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_44.wav": {
+    "id": "en_44",
+    "text": "I can't believe he said that to you. I'm trying to figure out what his angle is.",
+    "text_with_mark": "I can't believe he said that to you. <hmm> I'm trying to figure out what his angle is.",
+    "target_tag": "<hmm>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 8,
+      "n_units": 17,
+      "norm": 0.47058823529411764
+    },
+    "gt_pos": {
+      "index": 8,
+      "n_units": 17,
+      "norm": 0.47058823529411764
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_40.wav": {
+    "id": "en_40",
+    "text": "Okay, so 'insert tab A into slot B'... but slot B is already occupied by the C-bracket. That can't be right. Let me re-read that.",
+    "text_with_mark": "Okay, so 'insert tab A into slot B'... but slot B is already occupied by the C-bracket.<hmm> That can't be right. Let me re-read that.",
+    "target_tag": "<hmm>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 18,
+      "n_units": 27,
+      "norm": 0.6666666666666666
+    },
+    "gt_pos": {
+      "index": 18,
+      "n_units": 27,
+      "norm": 0.6666666666666666
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_36.wav": {
+    "id": "en_36",
+    "text": "Interesting. There's a hint of cherry, but underneath that... what is that flavor? It's almost... smoky.",
+    "text_with_mark": "Interesting. There's a hint of cherry, but underneath that... <hmm> what is that flavor? It's almost... smoky.",
+    "target_tag": "<hmm>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 9,
+      "n_units": 16,
+      "norm": 0.5625
+    },
+    "gt_pos": {
+      "index": 1,
+      "n_units": 16,
+      "norm": 0.0625
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_43.wav": {
+    "id": "en_43",
+    "text": "I see what the artist was going for with the color palette, but the composition feels a little unbalanced to me.",
+    "text_with_mark": "<hmm> I see what the artist was going for with the color palette, but the composition feels a little unbalanced to me.",
+    "target_tag": "<hmm>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 21,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 21,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_46.wav": {
+    "id": "en_46",
+    "text": "I'm not so sure about that. It works in theory, but have you considered the shipping logistics?",
+    "text_with_mark": "<hmm>I'm not so sure about that. It works in theory, but have you considered the shipping logistics?",
+    "target_tag": "<hmm>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 17,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 17,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_4.wav": {
+    "id": "en_4",
+    "text": "I've been looking for this receipt everywhere. It's not in my wallet, it's not on the desk... wait. I used the self-checkout that day. The gasket is completely worn through. It's in my email. Of course.",
+    "text_with_mark": "I've been looking for this receipt everywhere. It's not in my wallet, it's not on the desk... wait. I used the self-checkout that day. The gasket is completely worn through. <ah> It's in my email. Of course.",
+    "target_tag": "<ah>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 31,
+      "n_units": 37,
+      "norm": 0.8378378378378378
+    },
+    "gt_pos": {
+      "index": 25,
+      "n_units": 37,
+      "norm": 0.6756756756756757
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_38.wav": {
+    "id": "en_38",
+    "text": "You've got the acidity right, and the texture is perfect. It's just... there's an aftertaste I wasn't expecting.",
+    "text_with_mark": "You've got the acidity right, and the texture is perfect. <hmm> It's just... there's an aftertaste I wasn't expecting.",
+    "target_tag": "<hmm>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 10,
+      "n_units": 18,
+      "norm": 0.5555555555555556
+    },
+    "gt_pos": {
+      "index": 10,
+      "n_units": 18,
+      "norm": 0.5555555555555556
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_47.wav": {
+    "id": "en_47",
+    "text": "So the blue wire connects to the green one, not the red one like the manual says. That seems counterintuitive.",
+    "text_with_mark": "So the blue wire connects to the green one, not the red one like the manual says. <hmm> That seems counterintuitive.",
+    "target_tag": "<hmm>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 17,
+      "n_units": 20,
+      "norm": 0.85
+    },
+    "gt_pos": {
+      "index": 17,
+      "n_units": 20,
+      "norm": 0.85
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_41.wav": {
+    "id": "en_41",
+    "text": "So you're saying this rattling sound is brand new, as of this morning? And nothing unusual happened on the drive over?",
+    "text_with_mark": "So you're saying this rattling sound is brand new, as of this morning? <hmm> And nothing unusual happened on the drive over?",
+    "target_tag": "<hmm>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 13,
+      "n_units": 21,
+      "norm": 0.6190476190476191
+    },
+    "gt_pos": {
+      "index": 13,
+      "n_units": 21,
+      "norm": 0.6190476190476191
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_49.wav": {
+    "id": "en_49",
+    "text": "That's an interesting way to put it. I wonder what she really means by that. Maybe I'm overthinking it.",
+    "text_with_mark": "That's an interesting way to put it. <hmm> I wonder what she really means by that. Maybe I'm overthinking it.",
+    "target_tag": "<hmm>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 7,
+      "n_units": 19,
+      "norm": 0.3684210526315789
+    },
+    "gt_pos": {
+      "index": 7,
+      "n_units": 19,
+      "norm": 0.3684210526315789
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_6.wav": {
+    "id": "en_6",
+    "text": "Wait a second... the units. I didn't convert from meters to centimeters. Of course. That explains everything.",
+    "text_with_mark": "Wait a second... the units. I didn't convert from meters to centimeters. <ah> Of course. That explains everything.",
+    "target_tag": "<ah>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 12,
+      "n_units": 17,
+      "norm": 0.7058823529411765
+    },
+    "gt_pos": {
+      "index": 12,
+      "n_units": 17,
+      "norm": 0.7058823529411765
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_5.wav": {
+    "id": "en_5",
+    "text": "Right, that's what I was missing. The key wasn't in the box; it was part of the box itself. I see it now.",
+    "text_with_mark": "<ah> Right, that's what I was missing. The key wasn't in the box; it was part of the box itself. I see it now.",
+    "target_tag": "<ah>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 23,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 23,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_48.wav": {
+    "id": "en_48",
+    "text": "It was that one movie with the guy from that other thing... the one about the space explorers. What was it called again?",
+    "text_with_mark": "It was that one movie with the guy from that other thing...<hmm> the one about the space explorers. What was it called again?",
+    "target_tag": "<hmm>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 12,
+      "n_units": 23,
+      "norm": 0.5217391304347826
+    },
+    "gt_pos": {
+      "index": 12,
+      "n_units": 23,
+      "norm": 0.5217391304347826
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_8.wav": {
+    "id": "en_8",
+    "text": "I've been staring at this diagram for an hour. It just didn't make sense why this gear wouldn't turn... wait a minute. That explains everything. The clutch was disengaged the whole time.",
+    "text_with_mark": "I've been staring at this diagram for an hour. It just didn't make sense why this gear wouldn't turn... wait a minute. <ah> That explains everything. The clutch was disengaged the whole time.",
+    "target_tag": "<ah>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 22,
+      "n_units": 32,
+      "norm": 0.6875
+    },
+    "gt_pos": {
+      "index": 22,
+      "n_units": 32,
+      "norm": 0.6875
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_7.wav": {
+    "id": "en_7",
+    "text": "That's what I've been missing. You have to cross-reference the client codes from the March invoice. It all makes sense now.",
+    "text_with_mark": "<ah> That's what I've been missing. You have to cross-reference the client codes from the March invoice. It all makes sense now.",
+    "target_tag": "<ah>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 0,
+      "n_units": 22,
+      "norm": 0.0
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 22,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_9.wav": {
+    "id": "en_9",
+    "text": "I've been staring at this equation for an hour. The professor said the clue was in the denominator... wait a second. I see it now! You're supposed to factor it out first.",
+    "text_with_mark": "I've been staring at this equation for an hour. The professor said the clue was in the denominator... wait a second. <ah> I see it now! You're supposed to factor it out first.",
+    "target_tag": "<ah>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 21,
+      "n_units": 32,
+      "norm": 0.65625
+    },
+    "gt_pos": {
+      "index": 21,
+      "n_units": 32,
+      "norm": 0.65625
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_50.wav": {
+    "id": "en_50",
+    "text": "It's not what I expected. There's a... spiciness that hits you late. I think I like it.",
+    "text_with_mark": "It's not what I expected. There's a<hmm>... spiciness that hits you late. I think I like it.",
+    "target_tag": "<hmm>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 7,
+      "n_units": 17,
+      "norm": 0.4117647058823529
+    },
+    "gt_pos": {
+      "index": 0,
+      "n_units": 17,
+      "norm": 0.0
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  },
+  "out\\omnivoice_e2_from24\\en_45.wav": {
+    "id": "en_45",
+    "text": "You want to change the primary ingredient to saffron? That's a bold move. It would certainly make it stand out.",
+    "text_with_mark": "You want to change the primary ingredient to saffron? <hmm> That's a bold move. It would certainly make it stand out.",
+    "target_tag": "<hmm>",
+    "present": true,
+    "pos_unit": "word",
+    "pred_pos": {
+      "index": 9,
+      "n_units": 20,
+      "norm": 0.45
+    },
+    "gt_pos": {
+      "index": 9,
+      "n_units": 20,
+      "norm": 0.45
+    },
+    "hallucinated": false,
+    "hallucinated_events": []
+  }
+}

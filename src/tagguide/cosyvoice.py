@@ -1,11 +1,11 @@
-"""Tag-local guidance for CosyVoice 2 (autoregressive Qwen2 LM over speech tokens, then flow matching).
+"""CosyVoice 2 (autoregressive Qwen2 LM over speech tokens, then flow matching) with the two tag-local methods.
 
 CosyVoice 2's CFG lives in the flow matcher, which sees speech tokens, not the text, so the LM has no
-unconditional pass (g = 0). The terms act on the LM's log-probabilities:
+unconditional pass (g = 0). The methods act on the LM while m = 1:
 
-    presence  + l1 * m * (c - c_notag)    a second LM stream on the text with the tag removed
-    type      + l2 * m * (c - c_conf)     a third stream with the tag replaced by its confuser
-    excite    + b on the attention score from the current speech token to the tag's text tokens, while m = 1
+    guidance (contrast.py)    + l1 * (c - c_notag) + l2 * (c - c_conf) on the log-probabilities; c_notag and c_conf
+                              come from extra LM streams on the text with the tag removed / swapped for its confuser
+    excitation (excite.py)    + b on the attention score from the current speech token to the tag's text tokens
 
 All streams are fed the same sampled speech tokens. The output length is open, so the window m comes from the
 model: the cond stream's attention over the target text (mean over heads and the alignment layers, without the
@@ -22,6 +22,7 @@ import types
 import torch
 import torch.nn.functional as F
 
+from . import contrast, excite
 from .tags import word_span
 
 
@@ -49,13 +50,8 @@ class Reader:
         s = (query.float() @ k.transpose(-1, -2))[0, :, 0] * module.scaling  # [H, L]
         self.mass.append(s[:, self.keys].softmax(-1).mean(0))
         if self.excite:
-            add = torch.zeros((1, 1, 1, key.shape[2]), dtype=query.dtype, device=query.device)
-            add[..., self.tag] = self.bias
-            if attention_mask is not None:
-                am = attention_mask[..., :key.shape[2]]
-                add = add + (am.to(query.dtype) if am.dtype != torch.bool
-                             else torch.zeros_like(am, dtype=query.dtype).masked_fill(~am, torch.finfo(query.dtype).min))
-            attention_mask = add
+            attention_mask = excite.bias_row(attention_mask, key.shape[2], self.tag, self.bias, query.dtype,
+                                             query.device)
         return self.inner(module, query, key, value, aligned(attention_mask, key.shape[2], query.dtype), **kwargs)
 
 
@@ -111,11 +107,7 @@ def guided_inference(lm, reader, job):
             emb = self.llm.model.model.embed_tokens(torch.cat([prompt_text, tokens.to(dev)], dim=1))
             return torch.cat([sos, emb, task] + ([speech] if speech is not None else []), dim=1)
 
-        streams = [lm_input(text)]
-        if l1:
-            streams.append(lm_input(job["notag"]))
-        if l2:
-            streams.append(lm_input(job["confuser"]))
+        streams = [lm_input(t) for t in contrast.texts(job["setting"], text, job["notag"], job["confuser"])]
         n_text = text.shape[1]
         min_len, max_len = int(n_text * min_token_text_ratio), int(n_text * max_token_text_ratio)
         start = 1 + prompt_text.shape[1]  # first target text position in the cond stream
@@ -139,14 +131,8 @@ def guided_inference(lm, reader, job):
                     pos = -1 if i == 0 else read_position(torch.stack(reader.mass), job["layers"])
             reader.on = reader.excite = False
             c = lps[0]
-            if in_win:
-                j = 1
-                if l1:
-                    c = c + l1 * (lps[0] - lps[j])
-                    j += 1
-                if l2:
-                    c = c + l2 * (lps[0] - lps[j])
-                c = c.log_softmax(dim=-1)
+            if in_win:  # renormalized even with no contrast, as in the runs reported
+                c = contrast.apply(c, lps[0], lps[1:], job["setting"]).log_softmax(dim=-1)
             top = self.sampling_ids(c.squeeze(0), out_tokens, sampling, ignore_eos=i < min_len)
             at_tag = lo <= pos < hi
             inside += at_tag
