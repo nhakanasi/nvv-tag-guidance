@@ -1,0 +1,14 @@
+# Secrets and local paths
+.env
+
+# Synthesized audio and traces (regenerate with bench/*.py)
+out/
+*.wav
+!refs/*.wav
+*.pt
+
+
+__pycache__/
+*.pyc
+*.egg-info/
+.venv*/

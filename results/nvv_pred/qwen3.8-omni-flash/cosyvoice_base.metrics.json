@@ -1,0 +1,36 @@
+{
+  "gt_json": "third_party\\NVV-SuperBench\\dataset\\nvbench_data_en.json",
+  "audio_dir": "",
+  "reference_size_R": 2250,
+  "runs": [
+    {
+      "reference_size_R": 2250,
+      "predicted_size_P": 400,
+      "paired_size_I": 400,
+      "coverage": 0.17777777777777778,
+      "tp": 212,
+      "fp": 161,
+      "fn": 184,
+      "precision_paired": 0.5683646112600537,
+      "recall_paired": 0.5353535353535354,
+      "f1_paired": 0.5513654096228868,
+      "ca_f1": 0.26886493341788203,
+      "alpha": 0.5,
+      "delta": 2,
+      "pos_unit": "word",
+      "count_hallu_as_fp": true,
+      "tpd": 0.30660377358490565,
+      "tpd_mean": 0.30660377358490565,
+      "tpd_std": 0.6569740872099245,
+      "tpd_var": 0.4316149512653134,
+      "tpd_n": 212,
+      "ntd": 0.018965820149829327,
+      "ntd_mean": 0.018965820149829327,
+      "ntd_std": 0.04454827444208226,
+      "ntd_var": 0.0019845487557670796,
+      "ntd_n": 212,
+      "u_match": 212,
+      "pred_json": "out\\nvv_pred\\qwen3.8-omni-flash\\run1\\cosyvoice_base\\cosyvoice_base.json"
+    }
+  ]
+}

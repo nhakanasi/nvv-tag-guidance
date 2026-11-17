@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tagguide"
+version = "0.1.0"
+description = "Training-free, tag-local guidance for non-verbal vocalization tags in TTS"
+requires-python = ">=3.10"
+# torch, transformers and the TTS model itself come from each model's own environment.
+dependencies = ["pyyaml", "soundfile"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

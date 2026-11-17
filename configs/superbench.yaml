@@ -1,0 +1,56 @@
+# NVV-SuperBench (tag-based, English) with tag-local guidance.
+
+# Guidance settings: name -> [presence l1, type l2, excitation b]
+settings:
+  base: [0, 0, 0]
+  p2: [2, 0, 0]
+  t3: [0, 3, 0]
+  e2: [0, 0, 2]
+  p2t3e2: [2, 3, 2]
+
+seed: 0
+
+# Per model: the window and steps the terms act in, the benchmark type -> native tag map (a system is scored only
+# on the types its inventory covers), and each tag's confuser for the type contrast. With no confusion counts for
+# these base models, the confuser is the acoustically closest other tag of the same inventory (a heuristic).
+omnivoice:
+  steps: 8            # first K of OmniVoice's 32 decoding steps
+  dilate_s: 0.3       # seconds added on each side of the tag's window
+  tags:
+    laugh: "[laughter]"
+    sigh: "[sigh]"
+    ah: "[surprise-ah]"
+    oh: "[surprise-oh]"
+    hmm: "[dissatisfaction-hnn]"
+  confuser:
+    "[laughter]": "[sigh]"
+    "[sigh]": "[laughter]"
+    "[surprise-ah]": "[surprise-oh]"
+    "[surprise-oh]": "[surprise-ah]"
+    "[dissatisfaction-hnn]": "[sigh]"
+
+cosyvoice:
+  dilate: 1           # text tokens added on each side of the tag's window
+  layers: [11, 16]    # LM layers whose attention gives the read position (they track the text monotonically)
+  tags:
+    breath: "[breath]"
+    laugh: "[laughter]"
+    cough: "[cough]"
+    clucking: "[clucking]"
+    quick_breath: "[quick_breath]"
+    hiss: "[hissing]"
+    sigh: "[sigh]"
+    lipsmack: "[lipsmack]"
+  confuser:
+    "[breath]": "[quick_breath]"
+    "[quick_breath]": "[breath]"
+    "[laughter]": "[breath]"
+    "[cough]": "[breath]"
+    "[clucking]": "[lipsmack]"
+    "[lipsmack]": "[clucking]"
+    "[hissing]": "[sigh]"
+    "[sigh]": "[breath]"
+
+judge:
+  model: qwen3.8-omni-flash   # the paper's gemini-2.5-pro is closed to new API users
+  delta: 2                    # position collar in words (the benchmark's value for English)
