@@ -134,7 +134,8 @@ def guided_inference(lm, reader, job):
             if in_win:  # renormalized even with no contrast, as in the runs reported
                 c = contrast.apply(c, lps[0], lps[1:], job["setting"]).log_softmax(dim=-1)
             top = self.sampling_ids(c.squeeze(0), out_tokens, sampling, ignore_eos=i < min_len)
-            at_tag = lo <= pos < hi
+            # job["gate"](pos): another localization, for analysis (bench/guidance/control_cosyvoice.py)
+            at_tag = job["gate"](pos) if "gate" in job else lo <= pos < hi
             inside += at_tag
             in_win = bool(l1 or l2 or bias) and at_tag
             if top in self.stop_token_ids:

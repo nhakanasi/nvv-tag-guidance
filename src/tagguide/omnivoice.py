@@ -47,6 +47,9 @@ class Guide:
         # Steps [start, end) the excitation acts in; None: the same first K steps as the contrasts. Other ranges
         # are for analysis (bench/control_omnivoice.py), e.g. only the late steps.
         self.excite_steps = None
+        # Steps [start, end) the contrasts act in (all streams run); None: the first K. Other ranges are for
+        # analysis (bench/guidance/control_omnivoice.py).
+        self.contrast_steps = None
         self.orig = model._generate_iterative
         model._generate_iterative = self
 
@@ -81,6 +84,11 @@ class Guide:
             b = min(t_len, int(frames(plain[:end]) + dil) + 1)
             mask[a:b] = True
         return mask
+
+    def step_window(self, step, w):
+        """The window the contrasts use at `step` ([1, 1, T, 1] float), called after that step's forward pass.
+        Override to localize differently (bench/guidance/lcg_omnivoice.py does, with LCG's attention mask)."""
+        return w
 
     def tag_token_positions(self, task, text, cond_len, grouped=False):
         """Positions of the tags' text tokens in the conditional input (one list per tag if grouped). Override to
@@ -138,8 +146,9 @@ class Guide:
         w = win.view(1, 1, -1, 1).float()
 
         e_lo, e_hi = self.excite_steps or (0, self.steps)
+        c_lo, c_hi = self.contrast_steps or (0, self.steps)
         for s in range(gen_config.num_step):
-            early = s < self.steps
+            early = c_lo <= s < c_hi
             mask = excited if excited is not None and e_lo <= s < e_hi else allow
             if early:
                 logits = m(input_ids=ids, audio_mask=amask, attention_mask=mask).logits.float()
@@ -158,7 +167,8 @@ class Guide:
             u = F.log_softmax(logits[n_rows - 1:n_rows, :, :t_len, :], dim=-1)
             lp = c + gen_config.guidance_scale * (c - u)
             if early:
-                lp = contrast.apply(lp, c, [stream(j) for j in range(1, len(conds))], self.setting, w)
+                lp = contrast.apply(lp, c, [stream(j) for j in range(1, len(conds))], self.setting,
+                                    self.step_window(s, w))
             lp = torch.log_softmax(lp, dim=-1)
             lp[..., m.config.audio_mask_id] = -float("inf")
             pred = lp.argmax(dim=-1)
