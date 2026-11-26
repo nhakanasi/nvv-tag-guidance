@@ -18,9 +18,10 @@ here the two inputs differ only by the tag, so the difference is what the tag as
 1. **Inference only: no retraining, no new data, low cost.** Tagged NVV speech is scarce and fine-tuning a TTS model
    for each tag inventory is slow. Guidance uses the model as it is, with one extra conditional pass.
 2. **The model already has the capacity; it fails by not voicing the tag, or voicing it too weakly.** Missed tags
-   are rarely the wrong sound. They are no sound, or a sound too faint or misplaced to be heard as the tag. The model
-   knows where the tag is and that a sound goes there, but the tag moves its prediction too little to come out.
-   Guidance amplifies that shift.
+   are rarely the wrong sound. They are no sound, or a sound too faint or misplaced to be heard as the tag. At the
+   tag's frames the tag removes what the model would otherwise put there, but spreads the probability over many
+   tokens instead of choosing one: the model knows something different goes there, not what. Guidance concentrates
+   that probability on the tokens the tag raised.
 3. **A window keeps the fix on the tag.** The contrast acts only on the frames around the tag, so the rest of the
    utterance, including the speaker's voice, is the model's own.
 4. **Like CFG, only where it matters, so no noticeable extra time.** On a masked-diffusion model (OmniVoice) it acts
@@ -73,7 +74,37 @@ what the tag mainly encodes.
 against 0.350 on the 90 hits (items whose trajectory reproduces the judged clip; Mann-Whitney p = .064, a trend).
 The tag is there, but weakly: one token among many, trained at the same cost as any word.
 
-**Guidance amplifies exactly that shift.** In probabilities, `lp + l1 (c − c_notag)` samples from
+**At its frames the tag removes the default but does not pick a sound.** One frame inside the window of a missed
+item (en_1428, a laugh), at the first decoding step, codebook 1 (`results/figs/fig_frame.png`):
+
+![The tag removes the default but does not pick a sound](results/figs/fig_frame.png)
+
+| | top token | probability of the default (token 244) |
+|---|---|---|
+| without the tag | 244, 0.81 | 0.81 |
+| with the tag | 774, 0.07 (flat) | 0.05 |
+| presence guidance | 296, 0.60 | about 0 |
+
+Without the tag the model is sure what goes there. With the tag it drops that, but the probability spreads over many
+tokens the tag raised a little, and none of them stands out. Over the 89 items whose trace reproduces the base clip,
+the top-token probability in the window at step 1 has a median of:
+
+| | median | items, against "with the tag" | p (Wilcoxon) |
+|---|---|---|---|
+| window, without the tag | 0.101 | higher on 80 of 89 | 4e-14 |
+| window, with the tag (base) | 0.060 | | |
+| window, presence guidance | 0.107 | higher on 86 of 89 | 1e-15 |
+| outside the window (base) | 0.088 | higher on 65 of 89 | 2e-6 |
+
+The tag makes its own frames the least confident in the clip. OmniVoice commits the most confident frames first, so
+the tag's frames are filled last, when the words around them are fixed and pull them back towards speech or silence:
+the none and off outcomes. Guidance makes them more confident than the rest of the clip. (That the window's frames
+are committed later, and earlier under guidance, is the expected consequence; it is not yet measured. The flatness
+does not separate hits from misses, 0.060 against 0.066: it is the risk on every tagged item, and the misses are where
+it resolves the wrong way.)
+
+**Guidance concentrates the probability on what the tag raised.** In probabilities, `lp + l1 (c − c_notag)` samples
+from
 
     p ∝ p_c · (p_c / p_notag)^l1
 
@@ -81,7 +112,10 @@ At l1 = 2:
 
 - a token the tag made twice as likely (0.10 with the tag, 0.05 without) is multiplied by 4;
 - a token the tag made less likely (the next word, 0.6 against 0.8) is multiplied by 0.56;
-- a token the tag does not affect is left alone.
+- a token the tag does not affect is left alone;
+- the default in the frame above (0.81 without the tag, 0.05 with it) is multiplied by (0.05 / 0.81)^2 ≈ 0.004.
+
+So the default is removed for good and the mass goes to the few tokens the tag raised most.
 
 **It fixes misses on both models.** Fixed / broken counts the items missed without guidance and hit with it, and the
 reverse; p is the exact two-sided sign test:
@@ -96,6 +130,14 @@ The outcomes move as intended:
 - None falls: OmniVoice 3 → 0, CosyVoice 2 31 → 16.
 - Off falls: OmniVoice 11 → 4, CosyVoice 2 113 → 85.
 - Presence does not choose the sound: on CosyVoice 2, other rises (43 → 63).
+
+What it sounds like, on the same seed (`results/figs/fig_example.png`): a missed item with no sound at the tag (en_1428)
+and one with a faint sound (en_1414). With guidance a laugh appears inside the window and the speech outside it is
+unchanged; FlexSED's laughter probability goes from 0 and 0.14 (under its 0.5 threshold) to 0.97. Over the 100
+OmniVoice laugh and sigh items, FlexSED's peak in the window rises on 68 and falls on 23 (median 0.002 → 0.13,
+p = 3e-6).
+
+![Before and after presence guidance](results/figs/fig_example.png)
 
 **It amplifies a tag the model reads; it cannot replace reading it.** CosyVoice 2's attention read position (the
 peak text token in LM layers 11 and 16) lands on the tag's own tokens for a median of only 3-4 steps, and never in
@@ -180,6 +222,7 @@ From the judged predictions and traces in `results/` (no synthesis, no judge cal
 python -m bench.guidance.evidence --out results           # F1, fixed / broken, RTF, outcome split
 python -m bench.guidance.lcg_report --out results         # LCG's mask (section 2, 3) -> results/lcg_mask.md
 python -m bench.guidance.confusion_report --out results   # tag separability, locality (section 2, 3) -> results/confusion.md
+python -m bench.guidance.figures --out results           # per-frame distributions (section 2) -> results/figs/fig_frame.png
 ```
 
 `results/quality.jsonl` holds the per-clip WER and SIM-o (section 3, `results/quality_omnivoice_base.md`); the judged
@@ -195,9 +238,12 @@ python -m bench.guidance.control_omnivoice --out out --settings p2_all p2_global
 python -m bench.guidance.control_cosyvoice --out out                               # tag-peak gate
 python -m bench.guidance.lcg_omnivoice --out out                                   # LCG's mask
 python -m bench.guidance.confusion_omnivoice --out out                             # tag separability
+python -m bench.guidance.probe_omnivoice --out out --dump en_1428                  # per-frame distributions
 python -m bench.score --out out                                                    # judge (Qwen API)
 python -m bench.quality --out out --systems omnivoice_base omnivoice_p2 omnivoice_p2_global   # WER, SIM-o
 ```
+
+`results/figs/fig_example.png` (spectrograms and FlexSED laughter probability) uses FlexSED from VocalSoundExtend, which this repo does not include.
 
 ## References
 

@@ -24,6 +24,19 @@ of **1.0%** of its attention (mean over heads and layers) on the tag's tokens, a
 window. In CosyVoice 2 the current speech token puts **0.7%** on the tag while the model reads it. The rest goes to
 the voice prompt, the other words and the speech so far.
 
+Where each audio frame looks, on a missed item (en_1428, a laugh) at the first step (`results/figs/fig_attention.png`;
+rows are audio frames, columns the text tokens around the tag, dashed lines the window):
+
+![The tag's frames give the tag about 1% of their attention](results/figs/fig_attention.png)
+
+The diagonal is the text-to-speech alignment: each frame reads the word it is saying. In the window the alignment does
+reach the tag (its column is the brightest text in those rows), so the model finds the tag, but faintly. Of the window
+frames' attention, 69% goes to the speech being made, 11% to the voice prompt and 6% to the whole text; the tag's
+three tokens get 0.9%. With excitation the tag's column in the window becomes the darkest part of the grid, and the
+rows outside the window are unchanged. Across all 150 items the frames where
+the tag's sound belongs give it 1.0%, hardly more than the other frames (0.8%). Excitation raises it to 3.9% on this
+frame and to a median of 5.1% over the items, and leaves the rest of the text as it was.
+
 **Excitation raises it as intended, and only it.** Adding b = 2 to the scores multiplies the odds of attending to
 the tag by e^2 ≈ 7.4. Measured on the audio that was judged (all 150 OmniVoice and 400 CosyVoice 2 traces reproduce
 the judged clips exactly):
@@ -126,6 +139,8 @@ To regenerate the inputs (GPU; see the top README for environments):
 | Placebo, reseed, later steps | `python -m bench.excite.control_omnivoice --out out`, then `python -m bench.score --out out` | `out/omnivoice_<setting>/` |
 | Read-position layers (section 3) | `python -m bench.excite.read_position_check --items 4` | `out/read_position_check.md` |
 | Per-outcome attention, per layer | `python -m bench.excite.attn_report --out out` | `out/attn/attn_report.md` |
+
+The attention grid of section 1 (`results/figs/fig_attention.png`): `python -m bench.excite.probe_attn_omnivoice --out out --ids en_1428`, then `python -m bench.excite.figures --out out`.
 
 The excitation code is `src/tagguide/excite.py`; the model adapters (`omnivoice.py`, `cosyvoice.py`) apply it.
 
