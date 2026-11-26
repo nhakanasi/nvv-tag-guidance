@@ -77,7 +77,7 @@ The tag is there, but weakly: one token among many, trained at the same cost as 
 **At its frames the tag removes the default but does not pick a sound.** One frame inside the window of a missed
 item (en_1428, a laugh), at the first decoding step, codebook 1 (`results/figs/fig_frame.png`):
 
-![The tag removes the default but does not pick a sound](results/figs/fig_frame.png)
+![The tag removes the default but does not pick a sound](../../results/figs/fig_frame.png)
 
 | | top token | probability of the default (token 244) |
 |---|---|---|
@@ -137,7 +137,7 @@ unchanged; FlexSED's laughter probability goes from 0 and 0.14 (under its 0.5 th
 OmniVoice laugh and sigh items, FlexSED's peak in the window rises on 68 and falls on 23 (median 0.002 → 0.13,
 p = 3e-6).
 
-![Before and after presence guidance](results/figs/fig_example.png)
+![Before and after presence guidance](../../results/figs/fig_example.png)
 
 **It amplifies a tag the model reads; it cannot replace reading it.** CosyVoice 2's attention read position (the
 peak text token in LM layers 11 and 16) lands on the tag's own tokens for a median of only 3-4 steps, and never in

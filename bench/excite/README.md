@@ -27,7 +27,7 @@ the voice prompt, the other words and the speech so far.
 Where each audio frame looks, on a missed item (en_1428, a laugh) at the first step (`results/figs/fig_attention.png`;
 rows are audio frames, columns the text tokens around the tag, dashed lines the window):
 
-![The tag's frames give the tag about 1% of their attention](results/figs/fig_attention.png)
+![The tag's frames give the tag about 1% of their attention](../../results/figs/fig_attention.png)
 
 The diagonal is the text-to-speech alignment: each frame reads the word it is saying. In the window the alignment does
 reach the tag (its column is the brightest text in those rows), so the model finds the tag, but faintly. Of the window
