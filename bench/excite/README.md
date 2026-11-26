@@ -24,18 +24,25 @@ of **1.0%** of its attention (mean over heads and layers) on the tag's tokens, a
 window. In CosyVoice 2 the current speech token puts **0.7%** on the tag while the model reads it. The rest goes to
 the voice prompt, the other words and the speech so far.
 
-Where each audio frame looks, on a missed item (en_1428, a laugh) at the first step (`results/figs/fig_attention.png`;
-rows are audio frames, columns the text tokens around the tag, dashed lines the window):
+**The neglect appears during decoding.** At step 1 the model finds the tag; what separates a missed tag is that the
+frames then stop reading it. `results/figs/fig_attention.png` shows where each audio frame around a missed laugh (en_1428) reads in the
+text: rows are audio frames (time runs upward), columns the text tokens around the tag, each row is the frame's attention on the text
+normalized to 100%, and the dashed lines mark the window:
 
-![The tag's frames give the tag about 1% of their attention](../../results/figs/fig_attention.png)
+![The tag is found at step 1, then neglected where the model misses it](../../results/figs/fig_attention.png)
 
-The diagonal is the text-to-speech alignment: each frame reads the word it is saying. In the window the alignment does
-reach the tag (its column is the brightest text in those rows), so the model finds the tag, but faintly. Of the window
-frames' attention, 69% goes to the speech being made, 11% to the voice prompt and 6% to the whole text; the tag's
-three tokens get 0.9%. With excitation the tag's column in the window becomes the darkest part of the grid, and the
-rows outside the window are unchanged. Across all 150 items the frames where
-the tag's sound belongs give it 1.0%, hardly more than the other frames (0.8%). Excitation raises it to 3.9% on this
-frame and to a median of 5.1% over the items, and leaves the rest of the text as it was.
+The diagonal is the text-to-speech alignment: each frame reads the word it is saying. At step 1 the window's frames
+read the tag (13% of their text attention, the brightest column in those rows). By step 16, with no guidance, the
+alignment runs from "?" straight to "You": the laughter column is dark and the tag gets 8%. With excitation in steps
+1-8, the model's own attention at step 16 (no bias at that step) still reads the tag (11%), and the alignment keeps a
+segment for it.
+
+Over all items (printed by `bench.excite.figures`), the window frames' attention on the tag is the same at step 1 for the items the base
+model voices and the ones it misses (0.99% vs 0.94%; AUC 0.59). Over the steps it rises for the voiced items (1.12% at
+step 16; up from step 1 in 106 of 136, p < .001) and falls for the missed ones (0.82%; down in 10 of 14, p = .18), so
+by step 16 it separates them (AUC 0.73). On the missed items excitation in steps 1-8 holds it at 0.91% at step 16
+(above the base run in 11 of 14, p = .057), and 12 of the 14 are voiced. The share stays around 1% because a frame gives most of
+its attention to the speech being made and the voice prompt (en_1428, step 1: 69% and 11%; the whole text 6%). Excitation raises the share on the tag to a median of 5.1% in the steps it acts in.
 
 **Excitation raises it as intended, and only it.** Adding b = 2 to the scores multiplies the odds of attending to
 the tag by e^2 ≈ 7.4. Measured on the audio that was judged (all 150 OmniVoice and 400 CosyVoice 2 traces reproduce
@@ -46,9 +53,9 @@ the judged clips exactly):
 | OmniVoice, window frames, steps 1-8 | 1.01% | 5.08% | ×5.0 |
 | CosyVoice 2, steps at the tag | 0.7% | 2.9% | ×4.0 |
 
-The model's own (pre-bias) attention is unchanged by excitation (OmniVoice 1.01% with and without it), and after
-step 8 it is back to the base level (1.12% vs 1.11%): the bias does not change how the model attends on its own,
-only what the excited steps read.
+While the bias acts, the model's own (pre-bias) attention is unchanged by excitation (OmniVoice 1.01% with and
+without it). After step 8 it is back to the base level over all items (1.12% vs 1.11%); only on the items the base
+misses does it stay higher (above), as the tag's frames now carry the tag's sound.
 
 **Raising it voices the tag.** Excitation alone fixes misses on both models:
 
@@ -140,7 +147,7 @@ To regenerate the inputs (GPU; see the top README for environments):
 | Read-position layers (section 3) | `python -m bench.excite.read_position_check --items 4` | `out/read_position_check.md` |
 | Per-outcome attention, per layer | `python -m bench.excite.attn_report --out out` | `out/attn/attn_report.md` |
 
-The attention grid of section 1 (`results/figs/fig_attention.png`): `python -m bench.excite.probe_attn_omnivoice --out out --ids en_1428`, then `python -m bench.excite.figures --out out`.
+The attention grid of section 1 (`results/figs/fig_attention.png`): `python -m bench.excite.probe_attn_omnivoice --out out --ids en_1428 --at 1 16`, then `python -m bench.excite.figures --out out`.
 
 The excitation code is `src/tagguide/excite.py`; the model adapters (`omnivoice.py`, `cosyvoice.py`) apply it.
 
