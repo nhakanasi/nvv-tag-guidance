@@ -82,7 +82,7 @@ Let $O_t$ be the output positions still open at step $t$. Only these are decoded
 \ell^{(t)} = \ell_0^{(t)} + \lambda\, g_t\, m \odot \big(c^{(t)} - c_{\nt}^{(t)}\big),
 \label{eq:gate}
 \end{equation}
-set to 1 while the window's positions are still open; at the other steps the pass for $c_{\nt}$ is skipped. Which steps these are depends on the commit order (Section~\ref{sec:impl}).
+set to 1 while the window's positions are still open; at the other steps the term is not needed and the pass for $c_{\nt}$ can be skipped. Which steps these are depends on the commit order (Section~\ref{sec:impl}).
 
 \section{Implementation}
 \label{sec:impl}
@@ -130,14 +130,14 @@ the term at step $t$ uses the read position of step $t-1$.
 \begin{figure*}[t]
   \centering
   \includegraphics[width=\textwidth]{figures/fig_frame.pdf}
-  \caption{Left: one frame inside the window of a missed laugh (en\_1428), first codebook, first decoding step; the model's distribution over audio tokens without the tag, with the tag, and with presence guidance (Eq.~\ref{eq:presence}). Orange: the default token (top without the tag); blue: tokens the tag raised. Right: top-token probability in the window at step 1 over the 89 items whose trace reproduces the judged clip, and outside the window.}
+  \caption{(a)--(c) One frame inside the window of a missed laugh (Example~1, ``\ldots{} pizza rolls into our mouths from across the room? \tg{laughter} You're going to take someone's eye out.''), first codebook, first decoding step: the model's distribution over audio tokens (a) without the tag, (b) with the tag and (c) with presence guidance (Eq.~\ref{eq:presence}). Orange: the default token (top without the tag); blue: tokens the tag raised. (d) Top-token probability in the window at step 1 over the 89 items whose trace reproduces the judged clip, without the tag, with it and with guidance, and outside the window; bars: medians.}
   \label{fig:frame}
 \end{figure*}
 
 \begin{figure*}[t]
   \centering
   \includegraphics[width=0.85\textwidth]{figures/fig_example.pdf}
-  \caption{Two laughs missed without guidance, same seed and voice: en\_1428 (no sound) and en\_1414 (a faint sound). Top two rows: mel spectrograms without and with presence guidance; dashed lines: the window. Bottom: FlexSED's laughter probability.}
+  \caption{Two laughs missed without guidance, same seed and voice: (a) Example~1 (no sound) and (b) Example~2 (a faint sound; ``\ldots{} charges straight at the glass door. \tg{laughter} He didn't even slow down.''). Top two rows: mel spectrograms without and with presence guidance; dashed lines: the window. Bottom: FlexSED's laughter probability.}
   \label{fig:example}
 \end{figure*}
 
@@ -216,7 +216,7 @@ Presence guidance raises F1 from 0.909 to 0.967 on OmniVoice (12 items fixed, 2 
   \label{tab:kl}
 \end{table}
 
-Removing the tag moves the prediction in the window 2--5 times more than swapping it for the closest other tag (Table~\ref{tab:kl}): the tag mainly encodes that a sound goes there. At its frames the tag removes the default token but spreads the probability (Figure~\ref{fig:frame}, left): token 244 falls from 0.81 to 0.05, and the best of the tokens the tag raised gets only 0.07. Guidance multiplies the default by $(0.05/0.81)^2 \approx 0.004$ and gives 0.60 to a raised token. Over 89 items the median top-token probability in the window at step 1 is 0.060 with the tag, against 0.101 without it ($p = 4\cdot10^{-14}$), 0.088 outside the window and 0.107 with guidance (Figure~\ref{fig:frame}, right). The tag's frames are thus the least confident in the clip, while OmniVoice commits the most confident tokens first; we expect them to be filled last, pulled towards speech or silence by the words around them (not measured). This holds for hits and misses alike (0.066 against 0.060), so it is a risk on every tagged item rather than the cause of a miss.
+Removing the tag moves the prediction in the window 2--5 times more than swapping it for the closest other tag (Table~\ref{tab:kl}): the tag mainly encodes that a sound goes there. At its frames the tag removes the default token but spreads the probability (Figure~\ref{fig:frame}a--c): token 244 falls from 0.81 to 0.05, and the best of the tokens the tag raised gets only 0.07. Guidance multiplies the default by $(0.05/0.81)^2 \approx 0.004$ and gives 0.60 to a raised token. Over 89 items the median top-token probability in the window at step 1 is 0.060 with the tag, against 0.101 without it ($p = 4\cdot10^{-14}$), 0.088 outside the window and 0.107 with guidance (Figure~\ref{fig:frame}d). The tag's frames are thus the least confident in the clip, while OmniVoice commits the most confident tokens first; we expect them to be filled last, pulled towards speech or silence by the words around them (not measured). This holds for hits and misses alike (0.066 against 0.060), so it is a risk on every tagged item rather than the cause of a miss.
 
 Figure~\ref{fig:example} shows two missed laughs: with guidance a laugh appears in the window and the speech outside it is unchanged. The laughter probability of FlexSED \citep{hai2025flexsed}, an open-vocabulary sound event detector, rises from 0 and 0.14 to 0.97; over the 100 laugh and sigh items, its median peak in the window rises from 0.002 to 0.13 ($p = 3\cdot10^{-6}$).
 

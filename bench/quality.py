@@ -77,6 +77,9 @@ class Scorer:
         return {"wer": jiwer.wer(norm(text), norm(hyp)), "sim": sim, "hyp": hyp}
 
 
+WER_CAP = 1.0  # per clip: Whisper spells a long hiss as "s-s-s...", which gives WER above 10 on a few clips
+
+
 def report(out, systems):
     from bench.stats import sign_test
 
@@ -87,7 +90,7 @@ def report(out, systems):
     lines = [f"| system | items | WER | SIM-o | WER lower / higher than {ref} | p | SIM-o higher / lower | p |",
              "|---|---|---|---|---|---|---|---|"]
     for s in systems:
-        wer = statistics.fmean(by[s][i]["wer"] for i in ids)
+        wer = statistics.fmean(min(by[s][i]["wer"], WER_CAP) for i in ids)
         sim = statistics.fmean(by[s][i]["sim"] for i in ids)
         cells = ["-"] * 4
         if s != ref:

@@ -154,7 +154,7 @@ the bias at step $t$ uses the read position of step $t-1$, from the current spee
 \begin{figure*}[t]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/fig_attention.pdf}
-  \caption{Where each audio frame around a missed laugh (en\_1428) reads in the text, OmniVoice. Rows: audio frames (time upward); columns: the text tokens around the tag (tag in bold blue); each row is the frame's attention on the target text (mean over heads and layers), normalized to 100\%; dashed lines: the window. Left: no guidance, step 1. Middle: no guidance, step 16. Right: excitation in steps 1--8, the model's own attention at step 16 (no bias at that step). Titles: the window frames' share of text attention on the tag.}
+  \caption{Where each audio frame around a missed laugh (Example~1, ``\ldots{} pizza rolls into our mouths from across the room? \tg{laughter} You're going to take someone's eye out.'') reads in the text, OmniVoice. Rows: audio frames (time upward); columns: the text tokens around the tag (tag in bold blue); each row is the frame's attention on the target text (mean over heads and layers), normalized to 100\%; dashed lines: the window. (a) No guidance, step 1; (b) no guidance, step 16; (c) excitation in steps 1--8, the model's own attention at step 16 (no bias at that step). The window frames' share of text attention on the tag is 13\%, 8\% and 11\%.}
   \label{fig:attention}
 \end{figure*}
 

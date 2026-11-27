@@ -40,7 +40,14 @@ plt.rcParams.update({
 })
 
 
+def panel(ax, letter):
+    """Panel letter centered below the axes, under its x label."""
+    label = ax.get_xlabel()
+    ax.set_xlabel(f"{label}\n({letter})" if label else f"({letter})")
+
+
 def save(fig, out, name):
+    fig.align_xlabels()
     figs = out / "figs"
     figs.mkdir(parents=True, exist_ok=True)
     for ext in ("png", "pdf"):
@@ -163,8 +170,7 @@ def fig_frame(out, item="en_1428", cb=0, frame=14):
     fig = plt.figure(figsize=(7.4, 2.9))
     gs = fig.add_gridspec(1, 5, width_ratios=[1, 1, 1, 0.35, 1.3], wspace=0.2)
     x = np.arange(len(toks))
-    for k, (dist, title) in enumerate(((notag, "without the tag"), (base, "with the tag"),
-                                       (guided, "presence guidance"))):
+    for k, (dist, letter) in enumerate(((notag, "a"), (base, "b"), (guided, "c"))):
         ax = fig.add_subplot(gs[0, k])
         colors = [ORANGE if t == default else BLUE if raised[t] else "#b8b7b1" for t in toks]
         ax.bar(x, [float(dist[t]) for t in toks], color=colors, width=0.8, edgecolor=SURFACE, lw=1)
@@ -173,18 +179,18 @@ def fig_frame(out, item="en_1428", cb=0, frame=14):
                 fontsize=7.5, color=INK)
         ax.set_ylim(0, 0.9)
         ax.set_xticks(x, [str(t) for t in toks], rotation=90, fontsize=6.5)
-        ax.set_title(title, loc="left", fontsize=8.5, color=INK)
         ax.grid(axis="x", visible=False)
+        ax.set_xlabel("audio token")
         if k == 0:
             ax.set_ylabel("probability")
-            ax.set_xlabel("audio token (codebook 1)", fontsize=7.5)
         else:
             ax.set_yticklabels([])
+        panel(ax, letter)
         if top not in toks:
             ax.text(0.5, 0.8, f"top token {top}", transform=ax.transAxes, fontsize=7, color=INK2)
     fig.legend(handles=[plt.Rectangle((0, 0), 1, 1, color=c) for c in (ORANGE, BLUE)],
                labels=["default token (top without the tag)", "tokens the tag raised"], fontsize=7.5,
-               loc="upper left", bbox_to_anchor=(0.08, -0.06), ncol=2, frameon=False)
+               loc="upper left", bbox_to_anchor=(0.08, -0.13), ncol=2, frameon=False)
 
     keep = [r for r in res.values() if r["same_audio"]]
     ax = fig.add_subplot(gs[0, 4])
@@ -202,9 +208,8 @@ def fig_frame(out, item="en_1428", cb=0, frame=14):
     ax.set_ylabel("top-token probability")
     ax.set_ylim(0, None)
     ax.grid(axis="x", visible=False)
-    ax.set_title(f"window, all items (n={len(keep)})", loc="left", fontsize=8.5, color=INK)
-    fig.suptitle(f"The tag removes the default but does not pick a sound; guidance picks one "
-                 f"({item}, missed; window frame, step 1)", x=0.0, y=1.02, ha="left", fontsize=9.5, color=INK)
+    ax.set_xlabel(" ")  # a blank first line, so the letter lines up with (a)-(c)
+    panel(ax, "d")
     save(fig, out, "fig_frame")
 
 

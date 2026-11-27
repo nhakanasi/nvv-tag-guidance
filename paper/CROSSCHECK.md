@@ -68,3 +68,22 @@ code. Status: **ok** (code does what the paper says), **fixed** (paper wording c
 - `make_job` excites the first occurrence of the tag only (`cosyvoice.py:72`). The benchmark has one tag per item.
 - CosyVoice 2 renormalizes `c` with a log-softmax inside the window even with no contrast (excitation only), which
   changes nothing.
+
+## Final check (equations of Sections 3-4, reported numbers)
+
+| Statement in the paper | Code / data | Status |
+|---|---|---|
+| Eq. window: `m_i = [A(j_s) - delta <= i < A(j_e) + delta]`, `j_s`/`j_e` start of the word before / end of the word after | `omnivoice.py` `window()`: `a = int(frames(plain[:start]) - dil)`, `b = int(frames(plain[:end]) + dil) + 1`; `tags.word_span` | ok (integer rounding of the edges) |
+| OmniVoice `A(j) = T D(x_<j) / D(x)`, `x` the untagged text, `x_<j` its first `j` characters, `delta = 0.3 s` | `frames(prefix) = estimate_duration(prefix) * t_len / total`, `total = estimate_duration(plain)`; `dil = 0.3 * 25` | ok, boost described (open item 1) |
+| CosyVoice 2 read position `r_t = argmax (kappa * a_t)`, `a_t` = softmax over the target-text keys, mean over heads, mean over layers {11, 16}, 3-token box filter | `Reader.__call__` (`softmax(-1).mean(0)` per layer), `read_position` (`mass[layers].mean(0)`, `avg_pool1d(3, 1, 1)`) | ok |
+| `m_t = [j_s - delta <= r_{t-1} < j_e + delta]`, `delta = 1` token, the term at step `t` uses `r_{t-1}` | `lo <= pos < hi` with `lo, hi = window[0] - dilate, window[1] + dilate`; `in_win` set after the step and used at the next | ok |
+| Gate `g_t = [t <= K]`, `K = 8` (OmniVoice) | `early = 0 <= s < 8` (0-based) | ok |
+| Gate `g_t = m_t`, `O_t = {t}` (CosyVoice 2) | `in_win` gates `contrast.apply` and `reader.excite` | ok |
+| Guidance 3.3: the `c_notag` pass "can be skipped" when `g_t = 0` | OmniVoice: extra row only in the first 8 steps. CosyVoice 2: the reported runs feed the second stream every step; `run_cosyvoice --lazy` skips it (same clips up to float error on 48 items) | fixed ("is skipped" -> "can be skipped") |
+| `rho_t = sigma tau / (1 + (sigma - 1) tau)`, `tau = t/32`, `sigma = 0.1`: 3, 9, 23, 60 % at steps 8, 16, 24, 30 | upstream `_get_time_steps(t_shift=0.1)`; per-step counts use `ceil`, so "about" | ok |
+| Excite `alpha_t` (window's share of text attention on the tag), Fig. neglect | `probe_attn_omnivoice` grids (mean over heads and layers) normalized over the target text; `figures.fig_neglect` | ok |
+| Excite Eq. gate `s~ = s + b g_t [i in m, j in T_tag]` | `excite.bias_row` / additive mask on the conditional row, steps 1-8 | ok |
+| WER capped at 1 per clip | `bench/quality.py` `report` did not cap: the CosyVoice 2 no-guidance mean was 0.159 | fixed in code (`WER_CAP`); every WER/SIM-o number and per-item count in both papers matches the capped report |
+| Excite 6.2 numbers (AUC 0.59 / 0.73; 14.5 -> 9.5 %; 1.09x, 13/14, p = .002; layers 8, 12, 13 1.42x; AUC 0.35 -> 0.75) | `figures.neglect_stats`, `fig_neglect`, `fig_layers` | ok |
+| Guidance cost: RTF 1.56 -> 1.08 vs 0.93 on 48 items, clips equal up to 4e-4 | `run_cosyvoice --lazy`, one session | ok |
+| Fig. example (FlexSED tracks) | `bench/guidance/fig_example.py`, data in `results/flexsed/` (tracks made with VLSP's FlexSED wrapper, not in this repo) | ok |

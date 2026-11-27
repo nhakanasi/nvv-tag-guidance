@@ -21,7 +21,7 @@ import torch
 
 from bench.excite.attn_report import auc, hits
 from bench.stats import sign_test
-from bench.guidance.figures import BLUE, FPS, GRID, INK, INK2, plt, save
+from bench.guidance.figures import BLUE, FPS, GRID, INK, INK2, panel, plt, save
 
 
 def fig_attention(out, item="en_1428", late=16, margin=40):
@@ -56,7 +56,7 @@ def fig_attention(out, item="en_1428", late=16, margin=40):
                        origin="lower", extent=[-0.5, len(shown) - 0.5, f0 / FPS, f1 / FPS])
         for y in (w0, w1):
             ax.axhline(y / FPS, color="white", lw=1, ls="--")
-        ax.set_title(f"{title}\nstep {step}: tag {tag_share:.0f}%", loc="left", fontsize=8.5, color=INK)
+        panel(ax, "abc"[k])
         ax.set_xticks(x, [text[j][1].strip() or "_" for j in shown], rotation=90, fontsize=6.5)
         for lab, j in zip(ax.get_xticklabels(), shown):
             lab.set_color(BLUE if j in tcols else INK2)
@@ -212,15 +212,15 @@ def fig_neglect(out, probe="omnivoice_attn_probe_missed.pt", bins_per_window=12,
     gs = fig.add_gridspec(1, 5, width_ratios=[1, 1, 0.05, 0.5, 1.15], wspace=0.12)
     vmin, vmax = (float(np.nanpercentile(maps["base"], q)) for q in (1, 99))
     ext = [0.5, n_steps + 0.5, edges[0], edges[-1]]
-    for k, (name, title) in enumerate((("base", "(a) no guidance"), ("e2", f"(b) excited in steps 1-{K}"))):
+    for k, (name, title) in enumerate((("base", "a"), ("e2", "b"))):
         ax = fig.add_subplot(gs[0, k])
         im = ax.imshow(maps[name], aspect="auto", origin="lower", cmap="viridis", vmin=vmin, vmax=vmax, extent=ext,
                        interpolation="nearest")
         for y in (0, 1):
             ax.axhline(y, color="white", lw=0.8, ls="--")
-        ax.set_title(title, loc="left", fontsize=8.5, color=INK)
         ax.set_xticks([1, 8, 16, 24, 32])
         ax.set_xlabel("decoding step")
+        panel(ax, title)
         ax.set_yticks([0, 1])
         ax.set_yticklabels(["window\nstart", "window\nend"] if k == 0 else [], fontsize=7)
         ax.grid(False)
@@ -237,8 +237,8 @@ def fig_neglect(out, probe="omnivoice_attn_probe_missed.pt", bins_per_window=12,
         ax.plot(x, np.median(own[s], 0), color=color, lw=2, label=label)
     ax.text((K + 1) / 2, ax.get_ylim()[0], f"bias on\n(used:\n{np.median(used[:, :K]):.0f}%)", ha="center",
             va="bottom", fontsize=7, color=INK2)
-    ax.set_title("(c) window frames, own attention", loc="left", fontsize=8.5, color=INK)
     ax.set_xlabel("decoding step")
+    panel(ax, "c")
     ax.set_ylabel("tag's share (%)", fontsize=7.5)
     ax.set_xticks([1, 8, 16, 24, 32])
     ax.legend(fontsize=7, frameon=False, loc="upper right")
