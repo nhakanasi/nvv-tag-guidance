@@ -116,15 +116,27 @@ def guided_inference(lm, reader, job):
         reader.bias = bias
         lo, hi = job["window"][0] - job["dilate"], job["window"][1] + job["dilate"]
 
+        # job["lazy"]: the extra streams run only at steps in the window; the tokens emitted since their last run are
+        # fed then as one chunk (same inputs, so the same log-probabilities up to float error), not one per step.
+        lazy = job.get("lazy", False)
         caches, out_tokens, in_win, inside = [None] * len(streams), [], False, 0
+        pending = [[] for _ in streams]
         inputs = streams
         for i in range(max_len):
             lps = []
             for r, x in enumerate(inputs):
+                if lazy and r > 0:
+                    pending[r].append(x)
+                    if not in_win:
+                        continue
+                    x, pending[r] = torch.cat(pending[r], dim=1), []
+                    past = caches[r].get_seq_length() if caches[r] is not None else 0
+                    masks = torch.ones((1, x.shape[1], past + x.shape[1]), device=dev, dtype=torch.bool)
+                else:
+                    masks = torch.tril(torch.ones((1, x.shape[1], x.shape[1]), device=dev)).to(torch.bool)
                 reader.on = r == 0
                 reader.excite = r == 0 and bool(bias) and in_win
                 reader.mass = []
-                masks = torch.tril(torch.ones((1, x.shape[1], x.shape[1]), device=dev)).to(torch.bool)
                 y, caches[r] = self.llm.forward_one_step(x, masks=masks, cache=caches[r])
                 lps.append(self.llm_decoder(y[:, -1]).log_softmax(dim=-1))
                 if r == 0:  # the prefill step (i = 0) has no single-query attention

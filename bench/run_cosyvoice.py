@@ -4,7 +4,7 @@ Writes <out>/cosyvoice_<setting>/<id>.wav, <out>/timing.jsonl and <out>/windows.
 whose read position was at the tag). Resumes a stopped run. Needs a CosyVoice checkout (COSYVOICE_REPO) and the
 CosyVoice2-0.5B model (COSYVOICE_MODEL_DIR).
 
-    python -m bench.run_cosyvoice --out out [--settings base e2] [--per_type 2]
+    python -m bench.run_cosyvoice --out out [--settings base e2] [--per_type 2] [--lazy]
 """
 import argparse
 import sys
@@ -77,6 +77,8 @@ def main():
     ap.add_argument("--settings", nargs="+", default=list(sb.SETTINGS), choices=list(sb.SETTINGS))
     ap.add_argument("--per_type", type=int, default=0, help="first N items of each type (0: all)")
     ap.add_argument("--seed", type=int, default=sb.CONFIG["seed"])
+    ap.add_argument("--lazy", action="store_true",
+                    help="run the extra streams only in the window (systems cosyvoice_<setting>_lazy)")
     add_args(ap)
     args = ap.parse_args()
 
@@ -91,10 +93,11 @@ def main():
     cosy.synth(items[0], cosy.job(items[0], sb.SETTINGS[args.settings[-1]]))  # untimed warm-up
     for k, it in enumerate(items):
         for name in args.settings:
-            system = f"cosyvoice_{name}"
+            system = f"cosyvoice_{name}" + ("_lazy" if args.lazy else "")
             if (system, it["id"]) in done:
                 continue
             job = cosy.job(it, sb.SETTINGS[name])
+            job["lazy"] = args.lazy
             torch.manual_seed(args.seed)
             torch.cuda.synchronize()
             start = time.perf_counter()
