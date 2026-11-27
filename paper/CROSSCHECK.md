@@ -3,11 +3,11 @@
 Each statement of the Method sections of `guidance.tex` (presence guidance) and `excite.tex` (attention excitation),
 checked against the code in the `nvv-tag-guidance` repo (`src/tagguide/`, commit 3a2bc9a) and OmniVoice's upstream
 code. Status: **ok** (code does what the paper says), **fixed** (paper wording changed to match the code),
-**open** (a real difference, to decide).
+**resolved** (a real difference, settled by a decision recorded with it), **open** (still to decide; none left).
 
-## Open
+## Resolved
 
-1. **OmniVoice window: the duration estimate is not linear for short prefixes.** *Decision (option 1): described in both papers' OmniVoice window paragraph; a linear-window rerun is left for when judge calls are available.* The paper says the window boundary
+1. **OmniVoice window: the duration estimate is not linear for short prefixes.** *Resolved in the text: both papers' OmniVoice window paragraph describes the boost, so the papers match what ran. Optional follow-up: a rerun with a linear window (`low_threshold=None`), once judge calls are available.* The paper says the window boundary
    is the duration estimate of the untagged text up to a word boundary as a fraction of the estimate for the whole
    text. The code calls `duration_estimator.estimate_duration(prefix, ...)` (`src/tagguide/omnivoice.py:71-74`).
    Upstream (`omnivoice/utils/duration.py:208-249`) boosts estimates under `low_threshold = 50` frames (2 s) with a
@@ -24,7 +24,9 @@ code. Status: **ok** (code does what the paper says), **fixed** (paper wording c
 2. **CosyVoice 2 read position at excited steps.** The paper says the read position uses the attention "before the
    bias". The code computes each layer's scores before that layer's bias (`src/tagguide/cosyvoice.py:48-51`), but
    at an excited step the lower layers' bias has already changed the hidden states that layer 11 and 16 see. Strictly
-   it is the pre-bias score of an excited forward pass. Minor; a footnote is enough.
+   it is the pre-bias score of an excited forward pass. *Resolved, no change: the effect is negligible. The window
+   is on for the same share of steps with and without excitation (median 25.8% in both, mean 28.3% against 27.6%,
+   400 items, `windows.jsonl`), so the earlier layers' bias does not hold the read position on the tag.*
 
 ## Fixed in the papers
 
